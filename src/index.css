@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.object-position-xl {
+  object-position: center -140px;
+}
+
+@media (min-width: 1024px) {
+  .object-position-xl {
+    object-position: center -150px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .object-position-xl {
+    object-position: center -190px;
+  }
+}
