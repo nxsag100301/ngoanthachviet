@@ -1,5 +1,7 @@
+import About from '@/components/About'
 import HeroSection from '@/components/HeroSection'
 import Navbar from '@/components/Navbar'
+import RockArt from '@/components/RockArt'
 import React from 'react'
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
     <>
       <Navbar />
       <HeroSection />
+      <About />
+      <RockArt />
     </>
   )
 }

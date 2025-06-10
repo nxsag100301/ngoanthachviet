@@ -33,7 +33,7 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className='h-[84px] bg-primary-900 py-1 px-6 xl:px-20 sticky w-full top-0 z-50'>
+    <div className='h-[84px] bg-primary-900 py-1 px-6 lg:px-20 sticky w-full top-0 z-50 select-none'>
       <div className='mx-auto h-full flex flex-row justify-between relative'>
         <img
           src='/assets/images/logo.png'
@@ -42,7 +42,7 @@ const Navbar = () => {
         />
         <div
           className='text-white text-base leading-7 tracking-wide 
-        flex items-center gap-[20px] md:gap-[20px] lg:gap-[30px] xl:gap-[68px]'
+        flex items-center gap-[20px] md:gap-[20px] lg:gap-[25px] xl:gap-[68px]'
         >
           <span
             onClick={() => navigate('/')}
@@ -53,7 +53,7 @@ const Navbar = () => {
           <span className='cursor-pointer hidden lg:inline'>Sản phẩm</span>
           <span className='cursor-pointer hidden lg:inline'>Tin tức</span>
           <span className='cursor-pointer hidden lg:inline'>Đấu giá</span>
-          <div className='flex flex-col gap-[2px] select-none'>
+          <div className='flex flex-col gap-[2px] '>
             <span>{time}</span>
             <span className='text-xs leading-[18px] tracking-wide text-gray-300'>
               {today}
@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
           <div className='hidden sm:flex gap-[25px] items-center'>
             <IoIosSearch className='w-[42px] h-[42px] p-2 cursor-pointer' />
-            <Button className='w-[172px] h-[60px] text-base leading-7 tracking-wide select-none'>
+            <Button className='w-[172px] h-[60px] text-base leading-7 tracking-wide'>
               Đăng nhập
             </Button>
           </div>

@@ -18,12 +18,19 @@ export default {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
         },
-        black: {
+        gray: {
           25: '#F9F9FC',
           50: '#F0F1F3',
           100: '#E0E2E7',
           200: '#C2C6CE',
           400: '#858D9D'
+        },
+        black: {
+          100: '#D2D2D5',
+          200: '#A5A5AB',
+          400: '#4A4C56',
+          500: '#1D1F2C',
+          900: '#030304'
         },
         error: '#DC2626',
         errorbg: '#FEECEE',
@@ -78,11 +85,21 @@ export default {
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
-      penumbra: ['"UTM Penumbra"', 'sans-serif']
+      penumbra: ['"UTM Penumbra"', 'sans-serif'],
+      aquarelle: ['"UTM Aquarelle"', 'sans-serif']
     },
     backgroundImage: {
-      mountain: "url('/assets/images/mountain.png')"
+      mountain: "url('/assets/images/mountain.png')",
+      mountain2: "url('/assets/images/mountain2.png')"
     }
+    // screens: {
+    //   xs: '480px',
+    //   sm: '640px',
+    //   md: '768px',
+    //   lg: '1024px',
+    //   xl: '1280px',
+    //   '2xl': '1440px'
+    // }
   },
   plugins: [animate]
 }
