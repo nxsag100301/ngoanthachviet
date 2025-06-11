@@ -1,8 +1,9 @@
+import Status from './Status'
 import { Button } from './ui/button'
 
-const ProductCard = ({ image, title, description, price, status }) => {
+const ProductCard = ({ image, title, description, price, status, id }) => {
   return (
-    <div className='relative w-[410px] pb-[25px] rounded-[20px] card-shadow'>
+    <div className='relative pb-[25px] rounded-[20px] card-shadow'>
       <img
         src='/assets/images/stone-card.png'
         className='h-[355px] rounded-t-[20px] w-full object-cover mb-3'
@@ -11,13 +12,10 @@ const ProductCard = ({ image, title, description, price, status }) => {
         src='/assets/images/logo.png'
         className='absolute h-[76px] w-[122px] object-cover top-0 left-1/2 -translate-x-1/2 '
       />
-      <div
-        className='bg-[rgba(238,255,226,1)] rounded-2xl ml-4 p-4 
-      h-[62px] mb-4 text-[rgba(0,152,0,1)] font-medium text-sm tracking-[0.15px] flex flex-row items-center gap-4'
-      >
-        <img src='/assets/icons/checked.png' className='w-7 h-7' />
-        Đã được định danh bởi Ngoạn Thạch Việt
+      <div className='ml-4'>
+        <Status />
       </div>
+
       <div className='text-lg tracking-[0.15px] font-medium mx-8 mb-2'>
         Đá cảnh mây vờn núi
       </div>

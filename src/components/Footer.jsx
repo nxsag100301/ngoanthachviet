@@ -17,14 +17,14 @@ const Footer = () => {
                 </div>
               </div>
               <div className='flex flex-row gap-9'>
-                <div className='w-[52px] h-[52px] rounded-full bg-primary-600 flex justify-center items-center'>
-                  <img src='/assets/icons/fb.png' />
+                <div className='w-[52px] h-[52px] rounded-full bg-primary-600 flex justify-center items-center cursor-pointer'>
+                  <img src='/assets/icons/fb.png' className='z-10' />
                 </div>
-                <div className='w-[52px] h-[52px] rounded-full bg-primary-600 flex justify-center items-center'>
-                  <img src='/assets/icons/yt.png' />
+                <div className='w-[52px] h-[52px] rounded-full bg-primary-600 flex justify-center items-center cursor-pointer'>
+                  <img src='/assets/icons/yt.png' className='z-10' />
                 </div>
-                <div className='w-[52px] h-[52px] rounded-full bg-primary-600 flex justify-center items-center'>
-                  <img src='/assets/icons/tele.png' />
+                <div className='w-[52px] h-[52px] rounded-full bg-primary-600 flex justify-center items-center cursor-pointer'>
+                  <img src='/assets/icons/tele.png' className='z-10' />
                 </div>
               </div>
             </div>
@@ -50,15 +50,19 @@ const Footer = () => {
                 <div className='font-semibold text-base sm:text-lg mb-3 sm:mb-6'>
                   Liên hệ
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer'>
-                  Số điện thoại: 0938178938
+                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] '>
+                  <span className='text-black-200'>Số điện thoại:</span>{' '}
+                  <a href='tel:0938178938'>0938178938</a>
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer break-words'>
-                  Email: ngoanthachviet@gmail.com
+                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] break-words'>
+                  <span className='text-black-200'>Email:</span>{' '}
+                  <a href='mailto:ngoanthachviet@gmail.com'>
+                    ngoanthachviet@gmail.com
+                  </a>
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer text-justify'>
-                  Địa chỉ: D2 Đường 5B Him Lam P. Tân Hưng, Quận 7, TP. Hồ Chí
-                  Minh
+                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] text-justify'>
+                  <span className='text-black-200'>Địa chỉ:</span> D2 Đường 5B
+                  Him Lam P. Tân Hưng, Quận 7, TP. Hồ Chí Minh
                 </div>
               </div>
             </div>
