@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { IoIosSearch } from 'react-icons/io'
 import { Button } from './ui/button'
 import { useNavigate } from 'react-router-dom'
@@ -23,6 +23,7 @@ const Navbar = () => {
   const [today] = useState(getFormattedDate())
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
+  const menuRef = useRef(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -31,6 +32,22 @@ const Navbar = () => {
     }, 1000)
     return () => clearInterval(interval)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpenMenu(false)
+      }
+    }
+    if (isOpenMenu) {
+      document.addEventListener('mousedown', handleClickOutside)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpenMenu])
 
   return (
     <div className='h-[84px] bg-primary-900 py-1 px-6 lg:px-20 sticky w-full top-0 z-50 select-none'>
@@ -42,7 +59,7 @@ const Navbar = () => {
         />
         <div
           className='text-white text-base leading-7 tracking-wide 
-        flex items-center gap-[20px] md:gap-[20px] lg:gap-[25px] xl:gap-[68px]'
+        flex items-center gap-[20px] md:gap-[20px] xl:gap-[68px]'
         >
           <span
             onClick={() => navigate('/')}
@@ -78,7 +95,10 @@ const Navbar = () => {
           )}
         </div>
         {isOpenMenu && (
-          <div className='absolute w-[150px] text-white flex flex-col gap-3 bg-primary-900 right-2 top-14 py-2'>
+          <div
+            ref={menuRef}
+            className='absolute w-[150px] text-white flex flex-col gap-3 bg-primary-900 right-2 top-14 py-2'
+          >
             <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide'>
               Trang chủ
             </div>

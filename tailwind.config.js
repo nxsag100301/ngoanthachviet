@@ -90,7 +90,8 @@ export default {
     },
     backgroundImage: {
       mountain: "url('/assets/images/mountain.png')",
-      mountain2: "url('/assets/images/mountain2.png')"
+      mountain2: "url('/assets/images/mountain2.png')",
+      footer: "url('/assets/images/footer.png')"
     }
     // screens: {
     //   xs: '480px',
