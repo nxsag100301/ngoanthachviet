@@ -20,10 +20,10 @@ const HeroSection = () => {
           >
             Ngoạn Thạch Việt giới thiệu
           </div>
-          <div className='font-penumbra font-bold text-[35px] md:text-[42px] lg:text-[55px] xl:text-[63px] leading-9 md:leading-[100%] tracking-[6%] text-white uppercase'>
+          <div className='font-penumbra font-bold text-[33px] md:text-[42px] lg:text-[55px] xl:text-[63px] leading-9 md:leading-[100%] tracking-[6%] text-white uppercase'>
             Nghệ thuật <br />
           </div>
-          <div className='font-penumbra font-bold text-[35px] md:text-[42px] lg:text-[55px] xl:text-[63px] leading-5 md:leading-[100%] tracking-[6%] text-[#E68D09] uppercase mt-6'>
+          <div className='font-penumbra font-bold text-[33px] md:text-[42px] lg:text-[55px] xl:text-[63px] leading-5 md:leading-[100%] tracking-[6%] text-[#E68D09] uppercase mt-6'>
             Đá cảnh suiseki
           </div>
           <Button
