@@ -3,8 +3,9 @@ import AboutSection from './AboutSection'
 import HeroSection from './HeroSection'
 import RockArtSection from './RockArtSection'
 import RepresentativeSection from './RepresentativeSection'
-import ProductCard from '@/components/ProductCard'
 import ProductSection from './ProductSection'
+import ProgramSection from './ProgramSection'
+import ContactSection from './ContactSection'
 
 const Home = () => {
   return (
@@ -14,6 +15,8 @@ const Home = () => {
       <RockArtSection />
       <RepresentativeSection />
       <ProductSection />
+      <ProgramSection />
+      <ContactSection />
     </div>
   )
 }

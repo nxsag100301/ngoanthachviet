@@ -40,6 +40,7 @@ export default {
         warningbg: '#FFFBEA',
         blue: '#423FFF',
         bluebg: '#E7E7F6',
+        whitebg: '#F0F0F0',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -91,7 +92,9 @@ export default {
     backgroundImage: {
       mountain: "url('/assets/images/mountain.png')",
       mountain2: "url('/assets/images/mountain2.png')",
-      footer: "url('/assets/images/footer.png')"
+      footer: "url('/assets/images/footer.png')",
+      program: "url('/assets/images/program.png')",
+      contact: "url('/assets/images/mountain-contact.png')"
     }
     // screens: {
     //   xs: '480px',

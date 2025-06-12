@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import Home from './pages/HomePage/Home'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
@@ -13,6 +14,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
+      <ToastContainer autoClose={1500} hideProgressBar={true} />
     </Router>
   )
 }

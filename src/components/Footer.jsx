@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='w-full bg-primary-600'>
+      <div className='w-full bg-primary-600 select-none'>
         <div className='w-full max-w-screen-2xl mx-auto py-4 px-6 lg:px-20 text-center text-sm sm:text-base font-normal'>
           © Copyright 2025 by NgoanThachViet. All right Reserved - Design by
           PhucKhangNet
@@ -77,7 +77,7 @@ const Footer = () => {
       </div>
       <img
         src='/assets/images/mountain-footer.png'
-        className='absolute left-0 bottom-0 mix-blend-color-burn'
+        className='absolute left-0 bottom-0 mix-blend-color-burn select-none'
       />
     </div>
   )
