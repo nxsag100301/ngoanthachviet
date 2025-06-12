@@ -53,8 +53,9 @@ const Navbar = () => {
     <div className='h-[84px] bg-primary-900 py-1 px-6 lg:px-20 sticky w-full top-0 z-50 select-none'>
       <div className='mx-auto h-full flex flex-row justify-between relative'>
         <img
+          onClick={() => navigate('/')}
           src='/assets/images/logo.png'
-          className='w-[114px] h-[76px] object-cover'
+          className='w-[114px] h-[76px] object-cover cursor-pointer'
           alt='logo '
         />
         <div
@@ -67,9 +68,24 @@ const Navbar = () => {
           >
             Trang chủ
           </span>
-          <span className='cursor-pointer hidden lg:inline'>Sản phẩm</span>
-          <span className='cursor-pointer hidden lg:inline'>Tin tức</span>
-          <span className='cursor-pointer hidden lg:inline'>Đấu giá</span>
+          <span
+            onClick={() => navigate('/products')}
+            className='cursor-pointer hidden lg:inline'
+          >
+            Sản phẩm
+          </span>
+          <span
+            onClick={() => navigate('/news')}
+            className='cursor-pointer hidden lg:inline'
+          >
+            Tin tức
+          </span>
+          <span
+            onClick={() => navigate('/auction')}
+            className='cursor-pointer hidden lg:inline'
+          >
+            Đấu giá
+          </span>
           <div className='flex flex-col gap-[2px] '>
             <span>{time}</span>
             <span className='text-xs leading-[18px] tracking-wide text-gray-300'>
@@ -99,16 +115,40 @@ const Navbar = () => {
             ref={menuRef}
             className='absolute w-[150px] text-white flex flex-col gap-3 bg-primary-900 right-2 top-14 py-2'
           >
-            <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide'>
+            <div
+              onClick={() => {
+                navigate('/')
+                setIsOpenMenu(false)
+              }}
+              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
+            >
               Trang chủ
             </div>
-            <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide'>
+            <div
+              onClick={() => {
+                navigate('/products')
+                setIsOpenMenu(false)
+              }}
+              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
+            >
               Sản phẩm
             </div>
-            <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide'>
+            <div
+              onClick={() => {
+                navigate('/news')
+                setIsOpenMenu(false)
+              }}
+              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
+            >
               Tin tức
             </div>
-            <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide'>
+            <div
+              onClick={() => {
+                navigate('/auction')
+                setIsOpenMenu(false)
+              }}
+              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
+            >
               Đấu giá
             </div>
             <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide block sm:hidden'>

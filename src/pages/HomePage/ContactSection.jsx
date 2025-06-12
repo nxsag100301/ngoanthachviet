@@ -13,6 +13,7 @@ const InformationCard = ({
   return (
     <div
       className={`h-[76px] bg-${bgColor} flex flex-row items-center py-3 pl-9 pr-6 gap-6 rounded-xl`}
+      style={{ backgroundColor: bgColor }}
     >
       <div
         className={`w-[50px] h-[50px] rounded-full bg-${bgIconColor} flex items-center justify-center`}
@@ -62,7 +63,7 @@ const ContactSection = () => {
             descriptionColor='black-900'
           />
           <InformationCard
-            bgColor='whitebg'
+            bgColor='#F0F0F0'
             bgIconColor='primary-600'
             icon='mail.png'
             title='Email'
@@ -80,7 +81,7 @@ const ContactSection = () => {
             descriptionColor='black-900'
           />
           <InformationCard
-            bgColor='whitebg'
+            bgColor='#F0F0F0'
             bgIconColor='primary-600'
             icon='mark.png'
             title='Địa chỉ'
