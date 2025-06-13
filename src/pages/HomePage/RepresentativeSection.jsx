@@ -4,8 +4,8 @@ import React from 'react'
 
 const RepresentativeSection = () => {
   return (
-    <div className='h-full w-full bg-gray-25 pt-9 pb-16'>
-      <div className='w-full text-center relative select-none mb-16'>
+    <div className='h-full w-full bg-gray-25 pt-9 pb-4 lg:pb-16'>
+      <div className='w-full text-center relative select-none mb-4 lg:mb-16'>
         <div className='font-aquarelle text-[22px] sm:text-[32px] text-[#616161] font-normal lowercase'>
           Nghệ thuật
         </div>

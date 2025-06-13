@@ -8,10 +8,12 @@ import ProductPage from './pages/ProductPage/ProductPage'
 import NewsPage from './pages/NewsPage/NewsPage'
 import AuctionPage from './pages/AuctionPage/AuctionPage'
 import DetailProduct from './pages/DetailProduct/DetailProduct'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -22,7 +24,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
-      <ToastContainer autoClose={1500} hideProgressBar={true} />
+      <ToastContainer autoClose={1000} hideProgressBar={true} />
     </Router>
   )
 }

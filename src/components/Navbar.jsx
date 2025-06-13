@@ -86,7 +86,7 @@ const Navbar = () => {
           >
             Đấu giá
           </span>
-          <div className='flex flex-col gap-[2px] '>
+          <div className='flex flex-col gap-[2px]'>
             <span>{time}</span>
             <span className='text-xs leading-[18px] tracking-wide text-gray-300'>
               {today}
@@ -100,12 +100,12 @@ const Navbar = () => {
           </div>
           {isOpenMenu ? (
             <IoClose
-              className='w-[44px] h-[44px] cursor-pointer block lg:hidden'
+              className='w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] cursor-pointer block lg:hidden'
               onClick={() => setIsOpenMenu((prev) => !prev)}
             />
           ) : (
             <IoMenu
-              className='w-[44px] h-[44px] cursor-pointer block lg:hidden'
+              className='w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] cursor-pointer block lg:hidden'
               onClick={() => setIsOpenMenu((prev) => !prev)}
             />
           )}
