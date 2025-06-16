@@ -50,8 +50,8 @@ const Navbar = () => {
   }, [isOpenMenu])
 
   return (
-    <div className='h-[84px] bg-primary-900 py-1 px-6 lg:px-20 sticky w-full top-0 z-50 select-none'>
-      <div className='mx-auto h-full flex flex-row justify-between relative'>
+    <div className='h-[84px] bg-primary-900  py-1  sticky w-full top-0 z-50 select-none'>
+      <div className='mx-auto h-full flex flex-row justify-between relative max-w-screen-2xl px-6 lg:px-20'>
         <img
           onClick={() => navigate('/')}
           src='/assets/images/logo.png'

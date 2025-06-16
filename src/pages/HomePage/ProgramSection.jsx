@@ -30,7 +30,7 @@ const ProgramCard = ({ type, onChangeTab }) => {
   const { bgImage, imgSrc, activeIcon, label } = tabConfigs[type]
 
   return (
-    <div className='relative max-w-screen-xl h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px] mx-auto'>
+    <div className='relative max-w-screen-xl mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px]'>
       <div className=''>
         <div
           className="absolute inset-0 z-0 px-6 lg:px-20 w-full h-full overflow-hidden rounded-3xl before:absolute before:inset-0 before:rounded-[40px] before:bg-center before:bg-cover before:content-['']"
@@ -39,7 +39,7 @@ const ProgramCard = ({ type, onChangeTab }) => {
             backgroundImage: 'var(--bg)'
           }}
         ></div>
-        <div className='absolute -left-4 -bottom-4 w-[110%] h-[105%] bg-white/10 shadow-[0_0_50px_rgba(255,255,255,0.2)] backdrop-blur-[6px] rounded-[40px] transition-none' />
+        <div className='absolute -left-3 sm:-left-4 -bottom-3 md:-bottom-4 w-[110%] h-[110%] md:h-[105%] bg-white/10 shadow-[0_0_50px_rgba(255,255,255,0.2)] backdrop-blur-[6px] rounded-[40px] transition-none' />
       </div>
 
       {/* Logo */}
@@ -114,12 +114,12 @@ const ProgramSection = () => {
   }, [])
 
   return (
-    <div className='bg-[#FDFDFD] relative pt-4 pb-16'>
-      <div className='w-full text-center relative select-none mb-16'>
+    <div className='bg-[#FDFDFD] relative pt-4 pb-16  px-6 lg:px-20'>
+      <div className='w-full text-center relative select-none mb-16 max-w-screen-2xl mx-auto'>
         <div className='font-aquarelle text-[22px] sm:text-[32px] text-[#616161] font-normal lowercase'>
           Chương trình
         </div>
-        <div className='absolute left-1/2 -translate-x-1/2 top-6 sm:top-8 font-penumbra font-bold text-[24px] sm:text-[36px] text-[rgba(230,141,9,1)]'>
+        <div className='absolute left-1/2 -translate-x-1/2 top-6 sm:top-8 font-penumbra font-bold text-[24px] sm:text-[36px] text-primary-600 w-full'>
           Hoạt động
         </div>
       </div>
