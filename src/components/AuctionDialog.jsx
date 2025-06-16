@@ -16,10 +16,10 @@ const AuctionDialog = ({ open, setOpen }) => {
     <Dialog
       open={open}
       onOpenChange={setOpen}
-      modal={false}
+      modal={true}
       className='rounded-[12px]'
     >
-      <DialogContent className='w-[300px] sm:w[600px] md:w-[720px] rounded-[12px]'>
+      <DialogContent className='w-[320px] sm:w[600px] md:w-[720px] rounded-[12px]'>
         <DialogHeader>
           <DialogTitle>Đấu giá</DialogTitle>
         </DialogHeader>
@@ -36,7 +36,7 @@ const AuctionDialog = ({ open, setOpen }) => {
             <Button
               variant='outline'
               onClick={() => setOpen(false)}
-              className='h-[44px] w-[129px] border-none bg-gray-100 text-black-400 text-base'
+              className='h-[40px] w-[100px] md:h-[44px] md:w-[129px] border-none bg-gray-100 text-black-400 text-base'
             >
               Hủy
             </Button>
@@ -45,7 +45,7 @@ const AuctionDialog = ({ open, setOpen }) => {
             onClick={() => {
               formRef.current.submit()
             }}
-            className='h-[44px] w-[129px] text-white text-base'
+            className='h-[40px] w-[100px] md:h-[44px] md:w-[129px] text-white text-base'
           >
             Đấu giá
           </Button>

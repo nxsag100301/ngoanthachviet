@@ -8,19 +8,37 @@ import { Label } from '@/components/ui/label'
 import { toast } from 'react-toastify'
 
 const contactSchema = z.object({
-  name: z.string().min(1, 'Vui lòng nhập tên'),
+  name: z
+    .string({
+      required_error: 'Vui lòng nhập tên'
+    })
+    .min(1, 'Vui lòng nhập tên'),
+
   phone: z
-    .string()
+    .string({
+      required_error: 'Vui lòng nhập số điện thoại'
+    })
     .min(10, 'Số điện thoại không hợp lệ')
     .max(10, 'Số điện thoại không hợp lệ'),
-  email: z.string().email('Email không hợp lệ'),
-  question: z.string().min(1, 'Vui lòng nhập câu hỏi')
+
+  email: z
+    .string({
+      required_error: 'Vui lòng nhập email'
+    })
+    .email('Email không hợp lệ'),
+
+  question: z
+    .string({
+      required_error: 'Vui lòng nhập câu hỏi'
+    })
+    .min(1, 'Vui lòng nhập câu hỏi')
 })
 
 const ContactForm = () => {
   const {
     reset,
     register,
+    setValue,
     handleSubmit,
     formState: { errors }
   } = useForm({
@@ -62,6 +80,13 @@ const ContactForm = () => {
           placeholder='Nhập số điện thoại'
           type='tel'
           {...register('phone')}
+          onChange={(e) => {
+            const onlyNumbers = e.target.value.replace(/\D/g, '')
+            setValue('phone', onlyNumbers, {
+              shouldValidate: true,
+              shouldDirty: true
+            })
+          }}
           className={`placeholder:text-gray-400 ${
             errors.phone && 'border-red-500'
           }`}

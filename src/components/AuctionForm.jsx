@@ -60,7 +60,6 @@ const AuctionForm = forwardRef(
           <Input
             id='currentPrice'
             readOnly
-            {...register('currentPrice')}
             className='placeholder:text-gray-400'
             placeholder={`${Number(currentPrice).toLocaleString('vi-VN')} VND`}
           />
@@ -73,7 +72,6 @@ const AuctionForm = forwardRef(
             type='number'
             readOnly
             placeholder={`${Number(stepPrice).toLocaleString('vi-VN')} VND`}
-            {...register('stepPrice')}
             className={`placeholder:text-gray-400 no-spinner ${
               errors.stepPrice && 'border-red-500'
             }`}
@@ -103,7 +101,7 @@ const AuctionForm = forwardRef(
           )}
         </div>
         <Button type='submit' className='hidden' ref={btnRef}>
-          submit
+          Submit
         </Button>
       </form>
     )
