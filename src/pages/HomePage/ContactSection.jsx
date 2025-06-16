@@ -37,16 +37,16 @@ const InformationCard = ({
 const ContactSection = () => {
   return (
     <div className='bg-[#FDFDFD]'>
-      <div className='bg-primary-600 h-[80px] sm:h-[120px] md:h-[154px] relative pt-2 md:pt-7'>
+      <div className='bg-primary-600 h-[80px] sm:h-[120px] md:h-[154px] relative'>
         <img
           src='/assets/images/mountain-contact.png'
-          className='mix-blend-soft-light absolute object-cover w-full'
+          className='mix-blend-soft-light absolute object-cover w-full h-full border-2'
         />
-        <div className='w-full text-center relative select-none mb-16'>
+        <div className='w-full text-center relative select-none mb-16 pt-2 md:pt-7'>
           <div className='font-aquarelle text-[22px] sm:text-[32px] text-primary-1000 font-normal lowercase'>
             Kết nối
           </div>
-          <div className='absolute left-1/2 -translate-x-1/2 top-6 sm:top-8 font-penumbra font-bold text-[24px] sm:text-[36px] text-white'>
+          <div className='absolute left-1/2 -translate-x-1/2 top-7 sm:top-9 md:top-14 font-penumbra font-bold text-[24px] sm:text-[36px] text-white'>
             Liên hệ
           </div>
         </div>

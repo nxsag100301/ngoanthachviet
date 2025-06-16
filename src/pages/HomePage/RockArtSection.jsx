@@ -4,8 +4,8 @@ const RockArtSection = () => {
   return (
     <div className='bg-primary-700 relative h-[490px] sm:h-[550px] xl:h-[669px] bg-mountain2 bg-bottom bg-blend-overlay'>
       <div
-        className='px-6 lg:pr-20 lg:pl-0 2xl:px-0 max-w-screen-2xl w-full h-full mx-auto
-       sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl'
+        className='px-6 lg:pr-20 lg:pl-0 2xl:px-20 max-w-screen-2xl w-full h-full mx-auto
+       sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl tracking-[0.15px]'
       >
         <div className='text-end relative select-none mb-16 pr-7'>
           <div className='font-aquarelle text-[#FFFEFE] text-[22px] sm:text-[32px] font-normal lowercase block md:hidden xl:block'>
@@ -26,7 +26,7 @@ const RockArtSection = () => {
             <img
               src='/assets/images/rock-art.png'
               className='absolute -top-28 lg:-top-28 xl:-top-48 2xl:-top-48 w-[550px] h-[570px] lg:w-[550px] lg:h-[570px] 
-              xl:w-auto xl:h-auto md:-left-14 lg:-left-6 xl:-left-10 2xl:-left-36'
+              xl:w-auto xl:h-auto md:-left-14 lg:-left-6 xl:-left-10 2xl:-left-[55px]'
             />
             <div
               className='absolute -right-6 lg:right-3 xl:right-12 2xl:right-56 
@@ -42,8 +42,8 @@ const RockArtSection = () => {
               </div>
             </div>
             <div
-              className='absolute md:-right-8 xl:-right-[60px] lg:-right-20 2xl:right-8 
-              md:top-[170px] lg:top-[215px] 2xl:top-[225px] md:max-w-[220px] lg:max-w-[450px] xl:max-w-[550px] 2xl:max-w-[634px] text-start'
+              className='absolute md:-right-8 xl:-right-[60px] lg:-right-20 2xl:-right-10
+              md:top-[170px] lg:top-[215px] 2xl:top-[215px] md:max-w-[220px] lg:max-w-[450px] xl:max-w-[550px] 2xl:max-w-[710px] text-start'
             >
               <div className='font-penumbra font-bold uppercase text-sm lg:text-xl xl:text-2xl text-white mb-2'>
                 Nguồn gốc của Suiseki
@@ -55,7 +55,7 @@ const RockArtSection = () => {
               </div>
             </div>
             <div
-              className='absolute md:-right-2 lg:-right-10 xl:-right-3 2xl:right-44 md:top-[360px] lg:top-[365px] xl:top-[410px] 
+              className='absolute md:-right-2 lg:-right-10 xl:-right-3 2xl:right-40 md:top-[360px] lg:top-[365px] xl:top-[410px] 
              md:max-w-[280px] lg:max-w-[500px] xl:max-w-[609px] text-start'
             >
               <div className='font-penumbra font-bold uppercase text-sm lg:text-xl xl:text-2xl text-white mb-2'>

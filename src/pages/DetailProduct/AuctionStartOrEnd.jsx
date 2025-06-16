@@ -1,7 +1,7 @@
 const AuctionStartOrEnd = () => {
   return (
     <div className='h-[72px] rounded-[6px] py-2 px-4 lg:px-6 flex justify-between bg-bluebg items-center'>
-      <span className='text-sm sm:text-lg md:text-base lg:text-lg text-blue'>
+      <span className='text-sm font-semibold sm:text-lg md:text-base lg:text-lg text-blue'>
         Đấu giá bắt đầu sau
       </span>
       <div className='flex flex-row gap-2 sm:gap-4  lg:gap-8 items-center'>

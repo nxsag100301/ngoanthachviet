@@ -55,7 +55,7 @@ const Navbar = () => {
         <img
           onClick={() => navigate('/')}
           src='/assets/images/logo.png'
-          className='w-[114px] h-[76px] object-cover cursor-pointer'
+          className='w-[114px] h-[76px] object-cover cursor-pointer sm:scale-125'
           alt='logo '
         />
         <div
@@ -87,14 +87,14 @@ const Navbar = () => {
             Đấu giá
           </span>
           <div className='flex flex-col gap-[2px]'>
-            <span>{time}</span>
-            <span className='text-xs leading-[18px] tracking-wide text-gray-300'>
+            <span className='text-sm sm:text-base'>{time}</span>
+            <span className='text-[10px] sm:text-xs leading-[18px] tracking-wide text-gray-300'>
               {today}
             </span>
           </div>
           <div className='hidden sm:flex gap-[25px] items-center'>
             <IoIosSearch className='w-[42px] h-[42px] p-2 cursor-pointer' />
-            <Button className='w-[172px] h-[60px] text-base leading-7 tracking-wide'>
+            <Button className='w-[162px] h-[60px] text-base leading-7 tracking-wide'>
               Đăng nhập
             </Button>
           </div>

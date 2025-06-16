@@ -4,7 +4,7 @@ import React from 'react'
 
 const RepresentativeSection = () => {
   return (
-    <div className='h-full w-full bg-gray-25 pt-9 pb-4 lg:pb-16'>
+    <div className='h-full w-full bg-gray-25 pt-9 pb-4 lg:pb-16 tracking-[0.15px]'>
       <div className='w-full text-center relative select-none mb-4 lg:mb-16'>
         <div className='font-aquarelle text-[22px] sm:text-[32px] text-[#616161] font-normal lowercase'>
           Nghệ thuật
@@ -13,10 +13,14 @@ const RepresentativeSection = () => {
           Tiêu biểu
         </div>
         <div className='max-w-screen-2xl mt-20 mx-auto flex flex-col lg:flex-row items-center gap-6 xl:gap-16 px-6 lg:px-20'>
-          <div className='w-full lg:w-1/2'>
+          <div className='w-full lg:w-1/2 relative'>
             <img
               src='assets/images/representative.png'
               className='mx-auto lg:w-auto object-contain'
+            />
+            <img
+              src='/assets/images/logo.png'
+              className='absolute w-[100px] h-[60px] sm:w-[160px] sm:h-[100px] top-0 left-1/2 -translate-x-1/2'
             />
           </div>
           <div className='w-full lg:w-1/2'>
@@ -31,16 +35,16 @@ const RepresentativeSection = () => {
               bên dưới. Nhìn tổng thể thì vên đá như một khung cảnh thu nhỏ của
               những ngọn núi cao thấp trùng điệp, có hồ, có suối và thung lũng…
             </div>
-            <div className='w-[70%] lg:w-full xl:w-[60%] mb-4 xl:mb-9 md:px-16 lg:px-0'>
+            <div className='w-[300px] sm:w-[320px] lg:w-[358px] mb-4 xl:mb-9 md:px-16 lg:px-0'>
               <Status />
             </div>
             <div className='flex flex-row justify-start gap-4 md:gap-8 md:px-16 lg:px-0'>
-              <Button className='w-[120px] h-[45px] md:w-[172px] md:h-[60px] text-white text-sm md:text-lg'>
+              <Button className='w-[120px] h-[45px] md:w-[162px] md:h-[60px] text-white text-sm md:text-lg'>
                 Xem thông tin
               </Button>
               <Button
                 variant='outline'
-                className='w-[120px] h-[45px] md:w-[172px] md:h-[60px] text-sm md:text-lg'
+                className='w-[120px] h-[45px] md:w-[162px] md:h-[60px] text-sm md:text-lg'
               >
                 Lịch sử
               </Button>

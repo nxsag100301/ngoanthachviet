@@ -19,7 +19,7 @@ const AboutSection = () => {
         <div className='flex flex-col justify-center lg:flex-row relative max-w-screen-2xl mx-auto'>
           <div className='w-full lg:w-1/2 h-full'>
             <div className='max-w-full text-center lg:text-start lg:max-w-[410px] mb-0 lg:mb-16 mx-auto lg:mx-0'>
-              <div className='text-primary-600 font-bold text-xl sm:text-2xl uppercase'>
+              <div className='text-primary-600 font-bold text-xl sm:text-2xl uppercase mb-1'>
                 Ngoạn Thạch Việt
               </div>
               <div className='text-primary-900 text-sm lg:text-base text-center lg:text-justify'>
@@ -37,8 +37,8 @@ const AboutSection = () => {
               src='/assets/images/about-stone.png'
               className='w-[634px] h-[346px] object-cover lg:object-contain mx-auto'
             />
-            <div className='max-w-full text-center lg:text-start lg:max-w-[410px] mb-0 lg:mb-16 mx-auto lg:mx-0 lg:pb-10'>
-              <div className='text-primary-600 font-bold text-xl sm:text-2xl uppercase'>
+            <div className='max-w-full text-center lg:text-start lg:max-w-[450px] mb-0 lg:mb-16 mx-auto lg:mx-0 lg:pb-10'>
+              <div className='text-primary-600 font-bold text-xl sm:text-2xl uppercase mb-1'>
                 Giá trị cốt lõi
               </div>
               <div className='text-primary-900 text-sm lg:text-base text-center lg:text-justify'>

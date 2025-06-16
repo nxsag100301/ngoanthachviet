@@ -36,7 +36,7 @@ const AuctionDialog = ({ open, setOpen }) => {
             <Button
               variant='outline'
               onClick={() => setOpen(false)}
-              className='h-[40px] w-[100px] md:h-[44px] md:w-[129px] border-none bg-gray-100 text-black-400 text-base'
+              className='h-[40px] w-[100px] md:h-[44px] md:w-[162px] border-none bg-gray-100 text-black-400 text-base'
             >
               Hủy
             </Button>
@@ -45,7 +45,7 @@ const AuctionDialog = ({ open, setOpen }) => {
             onClick={() => {
               formRef.current.submit()
             }}
-            className='h-[40px] w-[100px] md:h-[44px] md:w-[129px] text-white text-base'
+            className='h-[40px] w-[100px] md:h-[44px] md:w-[162px] text-white text-base'
           >
             Đấu giá
           </Button>

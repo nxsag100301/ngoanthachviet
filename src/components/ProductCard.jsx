@@ -65,13 +65,13 @@ const ProductCard = ({
               Đấu giá ngay
             </Button>
           ) : isAuction === true && auctionStatus === 'notAuctionced' ? (
-            <Button variant='outline' className='h-[50px] w-[134px]'>
+            <Button variant='outline' className='h-[50px] w-[162px]'>
               Chi tiết
             </Button>
           ) : (
             <>
               <span>1.111.111 VND</span>
-              <Button variant='outline' className='h-[50px] w-[134px]'>
+              <Button variant='outline' className='h-[50px] w-[162px]'>
                 Mua ngay
               </Button>
             </>

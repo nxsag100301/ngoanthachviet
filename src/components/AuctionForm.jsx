@@ -1,4 +1,9 @@
-import React, { forwardRef, useImperativeHandle, useRef } from 'react'
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef
+} from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -37,6 +42,7 @@ const AuctionForm = forwardRef(
     const {
       reset,
       register,
+      setFocus,
       handleSubmit,
       formState: { errors }
     } = useForm({
@@ -45,6 +51,10 @@ const AuctionForm = forwardRef(
         yourBid: ''
       }
     })
+
+    useEffect(() => {
+      setFocus('yourBid')
+    }, [setFocus])
 
     const onSubmit = (data) => {
       console.log('Form submitted:', data)
@@ -91,7 +101,8 @@ const AuctionForm = forwardRef(
             placeholder='Nhập giá bạn muốn đặt'
             {...register('yourBid')}
             className={`placeholder:text-gray-400 no-spinner ${
-              errors.yourBid && 'border-red-500'
+              errors.yourBid &&
+              'border-red-500 focus:ring-0 focus:outline-none focus:border-red-500'
             }`}
           />
           {errors.yourBid && (

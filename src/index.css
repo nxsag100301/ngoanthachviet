@@ -8,7 +8,7 @@ body {
 
 @font-face {
   font-family: 'UTM Penumbra';
-  src: url('/assets/fonts/UTM-Penumbra.ttf') format('truetype');
+  src: url('/assets/fonts/UTM-PenumbraBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

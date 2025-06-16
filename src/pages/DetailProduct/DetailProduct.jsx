@@ -57,7 +57,7 @@ const DetailProduct = () => {
             </div>
             <Button
               onClick={() => setIsAuction((prev) => !prev)}
-              className='w-[113px] h-[50px] sm:w-[195px] sm:h-[60px] md:w-[110px] md:h-[45px] lg:w-[160px] xl:w-[195px] lg:h-[60px] px-6 py-4 text-white text-lg'
+              className='w-[113px] h-[50px] sm:w-[162px] sm:h-[60px] md:w-[110px] md:h-[45px] lg:w-[160px] xl:w-[162px] lg:h-[60px] px-6 py-4 text-white text-lg'
             >
               Đấu giá
             </Button>

@@ -63,7 +63,8 @@ const ContactForm = () => {
           placeholder='Nhập tên'
           {...register('name')}
           className={`placeholder:text-gray-400 ${
-            errors.name && 'border-red-500'
+            errors.name &&
+            'border-red-500 focus:ring-0 focus:outline-none focus:border-red-500'
           }`}
         />
         {errors.name && (
@@ -88,7 +89,8 @@ const ContactForm = () => {
             })
           }}
           className={`placeholder:text-gray-400 ${
-            errors.phone && 'border-red-500'
+            errors.phone &&
+            'border-red-500 focus:ring-0 focus:outline-none focus:border-red-500'
           }`}
         />
         {errors.phone && (
@@ -106,7 +108,8 @@ const ContactForm = () => {
           type='email'
           {...register('email')}
           className={`placeholder:text-gray-400 ${
-            errors.email && 'border-red-500'
+            errors.email &&
+            'border-red-500 focus:ring-0 focus:outline-none focus:border-red-500'
           }`}
         />
         {errors.email && (
@@ -123,7 +126,8 @@ const ContactForm = () => {
           placeholder='Chúng tôi có thể giúp gì cho bạn?'
           {...register('question')}
           className={`placeholder:text-gray-400 ${
-            errors.question && 'border-red-500'
+            errors.question &&
+            'border-red-500 focus:ring-0 focus:outline-none focus:border-red-500'
           }`}
         />
         {errors.question && (
@@ -135,7 +139,7 @@ const ContactForm = () => {
 
       <Button
         type='submit'
-        className='w-[130px] h-[50px] lg:w-[188px] lg:h-[60px] text-white text-base lg:text-lg'
+        className='w-[130px] h-[50px] lg:w-[162px] lg:h-[60px] text-white text-base lg:text-lg'
       >
         Gửi thông tin
       </Button>

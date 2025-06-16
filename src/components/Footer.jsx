@@ -46,7 +46,7 @@ const Footer = () => {
                   Theo dõi
                 </div>
               </div>
-              <div className='w-1/2 sm:max-w-[340px]'>
+              <div className='w-1/2 sm:max-w-[340px] tracking-[0.15px] leading-[34px] font-medium'>
                 <div className='font-semibold text-base sm:text-lg mb-3 sm:mb-6'>
                   Liên hệ
                 </div>

@@ -15,8 +15,8 @@ const HeroSection = () => {
       >
         <div className='lg:mx-0 w-full lg:w-full'>
           <div
-            className='text-[20px] md:text-[22px] lg:text-[30px] xl:text-[36px] leading-[30px] md:leading-[34px] lg:leading-[44px] 
-          font-medium text-white mb-3 md:mb-6 '
+            className='font-inter text-[20px] md:text-[22px] lg:text-[30px] xl:text-[36px] leading-[30px] md:leading-[34px] lg:leading-[44px] 
+          font-medium text-white mb-3 md:mb-7 '
           >
             Ngoạn Thạch Việt giới thiệu
           </div>
@@ -31,10 +31,10 @@ const HeroSection = () => {
           justify-center text-white text-[14px] md:text-base leading-7 
           tracking-wide select-none mt-[24px] xl:mt-[48px] z-20'
           >
-            <span className='absolute top-1.5 left-4 md:top-4 md:left-10'>
+            <span className='absolute top-[6px] left-4 md:top-[18px] md:left-10'>
               Xem ngay
             </span>
-            <FaArrowRight className='absolute top-[13px] right-4 md:top-6 md:right-8' />
+            <FaArrowRight className='absolute !w-3 !h-3 md:!w-[16px] md:!h-[16px] top-[15px] right-5 md:top-6 md:right-8' />
           </Button>
         </div>
         <img
@@ -45,7 +45,7 @@ const HeroSection = () => {
       </div>
       <img
         src='/assets/images/cloud-top.png'
-        className='absolute bottom-0 w-full h-full object-cover z-10'
+        className='absolute -bottom-0.5 w-full h-full object-cover z-20'
       />
       <img
         src='/assets/images/shape.png'
