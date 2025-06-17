@@ -55,7 +55,7 @@ const Navbar = () => {
         <img
           onClick={() => navigate('/')}
           src='/assets/images/logo.png'
-          className='w-[114px] h-[76px] object-cover cursor-pointer sm:scale-125'
+          className='w-[100px] h-[76px] object-cover cursor-pointer sm:scale-125'
           alt='logo '
         />
         <div
