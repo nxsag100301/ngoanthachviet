@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='relative w-full '>
       <div className='w-full bg-primary-1000'>
         <div className='w-full max-w-screen-2xl mx-auto pt-1 sm:pt-6 pb-2 sm:pb-9 px-6 lg:px-20 '>
-          <div className='flex flex-col lg:flex-row gap-0 justify-between'>
+          <div className='flex flex-col lg:flex-row gap-0 lg:gap-6 justify-between'>
             <div className='flex flex-col gap-6 items-center'>
               <div className=''>
                 <img
@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-row gap-20 sm:gap-[125px] justify-between xl:justify-between text-white pt-4 max-w-[613px]'>
+            <div className='flex flex-row gap-20 sm:gap-[125px] mx-auto lg:mx-0 justify-between text-white pt-4 max-w-[392px] sm:max-w-[441px] lg:max-w-[613px]'>
               <div className='z-10'>
                 <div className='font-semibold text-base sm:text-lg mb-3 sm:mb-6 cursor-pointer'>
                   Dịch vụ

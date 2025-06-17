@@ -64,7 +64,7 @@ const ContactSection = () => {
       <div className='bg-primary-600 h-[80px] sm:h-[120px] md:h-[154px] relative'>
         <img
           src='/assets/images/mountain-contact.png'
-          className='mix-blend-soft-light absolute object-cover w-full h-full border-2'
+          className='mix-blend-soft-light absolute object-cover w-full h-full'
         />
         <div className='w-full text-center relative select-none mb-16 pt-2 md:pt-7'>
           <div className='font-aquarelle text-[22px] sm:text-[32px] text-primary-1000 font-normal lowercase'>
