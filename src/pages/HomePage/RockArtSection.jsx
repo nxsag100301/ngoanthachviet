@@ -31,39 +31,39 @@ const RockArtSection = () => {
               xl:w-auto xl:h-auto md:-left-14 lg:-left-6 xl:-left-10 2xl:-left-[55px]'
             />
             <div
-              className='absolute -right-2 lg:right-9 xl:right-[70px] 2xl:right-[260px] 
+              className='absolute -right-2 lg:right-7 xl:right-[70px] 2xl:right-[260px] 
             md:top-14 lg:top-16 xl:top-[100px] md:max-w-[300px] lg:max-w-[450px] xl:max-w-[550px] text-start'
             >
               <div className='font-penumbra font-bold uppercase text-sm lg:text-xl xl:text-2xl text-white mb-2'>
                 Nghệ thuật từ đá và thiên nhiên
               </div>
-              <div className='font-medium text-sm xl:text-base text-[#271100]'>
+              <div className='font-medium text-sm xl:text-base text-[#271100] text-justify'>
                 Suiseki, từ tiếng Nhật, kết hợp giữa "Sui" (Nước) và "Seki"
                 (Đá), là nghệ thuật chiêm ngưỡng đá trong hình dáng tự nhiên
                 nhất.
               </div>
             </div>
             <div
-              className='absolute md:-right-3 xl:-right-[34px] lg:-right-12 2xl:-right-2
-              md:top-[170px] lg:top-[210px] xl:top-[285px] md:max-w-[220px] lg:max-w-[450px] xl:max-w-[550px] 2xl:max-w-[710px] text-start'
+              className='absolute md:-right-3 xl:-right-[34px] lg:right-2 2xl:-right-2
+              md:top-[170px] lg:top-[210px] xl:top-[285px] md:max-w-[220px] lg:max-w-[380px] xl:max-w-[550px] 2xl:max-w-[710px] text-start'
             >
               <div className='font-penumbra font-bold uppercase text-sm lg:text-xl xl:text-2xl text-white mb-2'>
                 Nguồn gốc của Suiseki
               </div>
-              <div className='font-medium text-sm xl:text-base text-[#271100]'>
+              <div className='font-medium text-sm xl:text-base text-[#271100] text-justify'>
                 Suiseki, nghệ thuật thưởng ngoạn đá tự nhiên, bắt nguồn từ Trung
                 Hoa với tên gọi Gongshi. Vào thời Nữ hoàng Suiko (593{`-`}628),
                 Suiseki được du nhập vào Nhật Bản như một món quà ngoại giao.
               </div>
             </div>
             <div
-              className='absolute md:right-3 lg:-right-3 xl:right-4 2xl:right-48 md:top-[360px] lg:top-[365px] xl:top-[468px] 
-             md:max-w-[280px] lg:max-w-[500px] xl:max-w-[609px] text-start'
+              className='absolute md:right-3 lg:right-8 xl:right-4 2xl:right-48 md:top-[360px] lg:top-[365px] xl:top-[468px] 
+             md:max-w-[280px] lg:max-w-[440px] xl:max-w-[609px] text-start'
             >
               <div className='font-penumbra font-bold uppercase text-sm lg:text-xl xl:text-2xl text-white mb-2'>
                 Vẻ đẹp tự nhiên
               </div>
-              <div className='font-medium text-sm xl:text-base text-[#271100]'>
+              <div className='font-medium text-sm xl:text-base text-[#271100] text-justify'>
                 Đá Suiseki là những tác phẩm nghệ thuật từ thiên nhiên, mang
                 trong mình vẻ đẹp tự nhiên nguyên bản. Đặt trên đế gỗ (Daiza)
                 hoặc khay cát (Suiban).

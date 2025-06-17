@@ -59,7 +59,7 @@ const ProgramCard = ({ type, onChangeTab }) => {
       <Button
         onClick={() => onChangeTab(type)}
         className='z-30 absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white text-primary-600 rounded-[32px] text-xs sm:text-sm xl:text-xl
-        bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2'
+        bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 hover:bg-white cursor-auto'
       >
         <img src={activeIcon} className='w-3.5 h-3.5 xl:w-7 xl:h-7' />
         {label}
@@ -73,11 +73,12 @@ const ProgramCard = ({ type, onChangeTab }) => {
             key={tab}
             onClick={() => onChangeTab(tab)}
             className={`absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white/70 text-gray-400 rounded-[32px] text-xs sm:text-sm xl:text-xl z-30
-        bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 ${
-          index === 0
-            ? 'left-3 sm:left-6 md:left-10 lg:left-20'
-            : 'right-3 sm:right-6 md:right-10 lg:right-20'
-        } flex items-center justify-center gap-2`}
+        bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 hover:bg-white/70 cursor-auto
+         ${
+           index === 0
+             ? 'left-3 sm:left-6 md:left-10 lg:left-20'
+             : 'right-3 sm:right-6 md:right-10 lg:right-20'
+         } flex items-center justify-center gap-2`}
           >
             <img
               src={

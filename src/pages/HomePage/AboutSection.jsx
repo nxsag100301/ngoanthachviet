@@ -29,15 +29,15 @@ const AboutSection = () => {
             </div>
             <img
               src='/assets/images/about-stone2.png'
-              className='w-[646px] h-[352px] object-cover lg:object-contain  mx-auto'
+              className='w-[646px] h-[352px] object-cover lg:object-contain mx-auto lg:ml-0'
             />
           </div>
           <div className='flex flex-col-reverse lg:flex-col w-full lg:w-1/2 h-full'>
             <img
               src='/assets/images/about-stone.png'
-              className='w-[634px] h-[346px] object-cover lg:object-contain mx-auto'
+              className='w-[646px] lg:w-full h-[346px] object-cover lg:object-contain mx-auto lg:self-end lg:-mr-6 xl:-mr-10'
             />
-            <div className='max-w-full text-center lg:text-start lg:max-w-[450px] mb-0 lg:mb-16 mx-auto lg:mx-0 lg:pb-10'>
+            <div className='max-w-full text-center lg:text-start lg:max-w-[450px] mb-0 lg:mb-16 mx-auto lg:mx-0 lg:pb-10 self-end'>
               <div className='text-primary-600 font-penumbra font-bold text-xl sm:text-2xl uppercase mb-1'>
                 Giá trị cốt lõi
               </div>

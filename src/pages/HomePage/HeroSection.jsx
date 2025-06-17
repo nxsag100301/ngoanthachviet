@@ -29,7 +29,7 @@ const HeroSection = () => {
           <Button
             className='w-[120px] h-[40px] md:w-[172px] md:h-[60px] relative 
           justify-center text-white text-[14px] md:text-base leading-7 
-          tracking-wide select-none mt-[24px] xl:mt-[48px] z-20'
+          tracking-wide select-none mt-[24px] xl:mt-[48px] z-30'
           >
             <span className='absolute top-[6px] left-4 md:top-[18px] md:left-10'>
               Xem ngay
@@ -45,7 +45,7 @@ const HeroSection = () => {
       </div>
       <img
         src='/assets/images/cloud-top.png'
-        className='absolute -bottom-[2px] w-full h-full object-cover z-20'
+        className='absolute -bottom-[2px] w-full h-full object-cover z-20 pointer-events-none'
       />
       <img
         src='/assets/images/shape.png'
