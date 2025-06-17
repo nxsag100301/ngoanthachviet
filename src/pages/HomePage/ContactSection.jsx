@@ -12,7 +12,7 @@ const InformationCard = ({
 }) => {
   return (
     <div
-      className={`h-[76px] bg-${bgColor} flex flex-row items-center py-3 pl-9 pr-6 gap-6 rounded-xl`}
+      className={`h-[76px] lg:min-w-[255px] bg-${bgColor} flex flex-row items-center py-3 px-6 gap-4 rounded-xl`}
       style={{ backgroundColor: bgColor }}
     >
       <div
@@ -21,11 +21,11 @@ const InformationCard = ({
         <img src={`/assets/icons/${icon}`} className='w-6 h-6' />
       </div>
       <div className='space-y-1'>
-        <div className={`text-${titleColor} text-lg font-semibold`}>
+        <div className={`text-${titleColor} text-xs font-semibold`}>
           {title}
         </div>
         <div
-          className={`text-${descriptionColor} font-medium text-xs max-w-[135px] break-words`}
+          className={`text-${descriptionColor} font-medium text-xs max-w-[169px]`}
         >
           {description}
         </div>
@@ -59,7 +59,7 @@ const ContactSection = () => {
             icon='call.png'
             title='Số điện thoại'
             titleColor='white'
-            description='0123456789'
+            description='0986663878'
             descriptionColor='black-900'
           />
           <InformationCard
@@ -86,7 +86,7 @@ const ContactSection = () => {
             icon='mark.png'
             title='Địa chỉ'
             titleColor='primary-600'
-            description='D2 đường 5B Him Lam, P. Tân Hưng, Quận 7'
+            description='167 Lý Thường Kiệt, Di Linh, Lâm Đồng'
             descriptionColor='black-400'
           />
         </div>
@@ -94,7 +94,14 @@ const ContactSection = () => {
         <div className='flex flex-row shadow-2xl max-h-[504px] rounded-[20px]'>
           <img
             src='/assets/images/map.png'
-            className='hidden md:block object-cover md:w-1/2 xl:w-auto'
+            className='hidden md:inline-block object-cover md:w-1/2 md:max-w-[540px] 
+            rounded-tl-[20px] rounded-bl-[20px] xl:w-auto cursor-pointer'
+            onClick={() =>
+              window.open(
+                'https://maps.app.goo.gl/85ApnPmXXW49heSu7?g_st=com.google.maps.preview.copy',
+                '_blank'
+              )
+            }
           />
           <ContactForm />
         </div>

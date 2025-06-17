@@ -7,19 +7,19 @@ const tabOrder = ['contest', 'exhibiton', 'advise']
 
 const tabConfigs = {
   contest: {
-    bgImage: '/assets/images/program.png',
+    bgImage: '/assets/images/contest-blur.png',
     imgSrc: '/assets/images/program.png',
     activeIcon: '/assets/icons/trophy.png',
     label: 'Hội thi'
   },
   exhibiton: {
-    bgImage: '/assets/images/trienlam.png',
+    bgImage: '/assets/images/exhibition-blur.png',
     imgSrc: '/assets/images/trienlam.png',
     activeIcon: '/assets/icons/exhibiton-active.png',
     label: 'Triển lãm'
   },
   advise: {
-    bgImage: '/assets/images/tuvan.png',
+    bgImage: '/assets/images/advise-blur.png',
     imgSrc: '/assets/images/tuvan.png',
     activeIcon: '/assets/icons/advise-active.png',
     label: 'Tư vấn'
@@ -30,17 +30,15 @@ const ProgramCard = ({ type, onChangeTab }) => {
   const { bgImage, imgSrc, activeIcon, label } = tabConfigs[type]
 
   return (
-    <div className='relative max-w-screen-xl mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px]'>
-      <div className=''>
-        <div
-          className="absolute inset-0 z-0 px-6 lg:px-20 w-full h-full overflow-hidden rounded-3xl before:absolute before:inset-0 before:rounded-[40px] before:bg-center before:bg-cover before:content-['']"
-          style={{
-            ['--bg']: `url('${bgImage}')`,
-            backgroundImage: 'var(--bg)'
-          }}
-        ></div>
-        <div className='absolute -left-3 sm:-left-4 -bottom-3 md:-bottom-4 w-[110%] h-[110%] md:h-[105%] bg-white/10 shadow-[0_0_50px_rgba(255,255,255,0.2)] backdrop-blur-[6px] rounded-[40px] transition-none' />
-      </div>
+    <div className='relative max-w-[1376px] mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px]'>
+      <div
+        className='absolute bg-no-repeat bg-cover inset-0 z-0 w-full h-full rounded-[40px] overflow-hidden'
+        style={{
+          ['--bg']: `url('${bgImage}')`,
+          backgroundImage: 'var(--bg)',
+          filter: 'blur(8px)'
+        }}
+      ></div>
 
       {/* Logo */}
       <img
@@ -60,10 +58,10 @@ const ProgramCard = ({ type, onChangeTab }) => {
       {/* Active button */}
       <Button
         onClick={() => onChangeTab(type)}
-        className='z-30 absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white text-primary-600 rounded-[32px] text-sm xl:text-xl
+        className='z-30 absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white text-primary-600 rounded-[32px] text-xs sm:text-sm xl:text-xl
         bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2'
       >
-        <img src={activeIcon} className='w-4 h-4 xl:w-7 xl:h-7' />
+        <img src={activeIcon} className='w-3.5 h-3.5 xl:w-7 xl:h-7' />
         {label}
       </Button>
 
@@ -74,7 +72,7 @@ const ProgramCard = ({ type, onChangeTab }) => {
           <Button
             key={tab}
             onClick={() => onChangeTab(tab)}
-            className={`absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white/70 text-gray-400 rounded-[32px] text-sm xl:text-xl z-30
+            className={`absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white/70 text-gray-400 rounded-[32px] text-xs sm:text-sm xl:text-xl z-30
         bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 ${
           index === 0
             ? 'left-3 sm:left-6 md:left-10 lg:left-20'
@@ -89,7 +87,7 @@ const ProgramCard = ({ type, onChangeTab }) => {
                   ? '/assets/icons/gallery.png'
                   : '/assets/icons/advise.png'
               }
-              className='w-4 h-4 xl:w-7 xl:h-7'
+              className='w-3.5 h-3.5 xl:w-7 xl:h-7'
             />
             {tabConfigs[tab].label}
           </Button>
@@ -102,20 +100,20 @@ const ProgramSection = () => {
   const [tab, setTab] = useState('contest')
 
   useLayoutEffect(() => {
-    const interval = setInterval(() => {
+    const timeout = setTimeout(() => {
       setTab((prev) => {
         const currentIndex = tabOrder.indexOf(prev)
         const nextIndex = (currentIndex + 1) % tabOrder.length
         return tabOrder[nextIndex]
       })
-    }, 3000)
+    }, 2000)
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearTimeout(timeout)
+  }, [tab])
 
   return (
-    <div className='bg-[#FDFDFD] relative pt-4 pb-16  px-6 lg:px-20'>
-      <div className='w-full text-center relative select-none mb-16 max-w-screen-2xl mx-auto'>
+    <div className='bg-[#FDFDFD] relative pt-4 pb-16 px-6 lg:px-20'>
+      <div className='w-full text-center relative select-none mb-16 max-w-screen-2xl mx-auto z-20'>
         <div className='font-aquarelle text-[22px] sm:text-[32px] text-[#616161] font-normal lowercase'>
           Chương trình
         </div>
@@ -123,14 +121,13 @@ const ProgramSection = () => {
           Hoạt động
         </div>
       </div>
-
       <AnimatePresence mode='wait'>
         <motion.div
           key={tab}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
         >
           <ProgramCard type={tab} onChangeTab={setTab} />
         </motion.div>

@@ -45,7 +45,7 @@ const HeroSection = () => {
       </div>
       <img
         src='/assets/images/cloud-top.png'
-        className='absolute -bottom-[1px] w-full h-full object-cover z-20'
+        className='absolute -bottom-[2px] w-full h-full object-cover z-20'
       />
       <img
         src='/assets/images/shape.png'

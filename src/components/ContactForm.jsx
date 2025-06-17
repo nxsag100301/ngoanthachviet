@@ -54,7 +54,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='w-[736px] py-9 px-6 xl:px-20 space-y-5'
+      className='w-full py-9 px-6 xl:px-20 space-y-5'
     >
       <div className='space-y-2 relative'>
         <Label htmlFor='name'>Tên khách hàng</Label>
