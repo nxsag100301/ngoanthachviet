@@ -8,8 +8,19 @@ const InformationCard = ({
   title,
   titleColor,
   description,
-  descriptionColor
+  descriptionColor,
+  type // 'email' | 'phone' | 'address'
 }) => {
+  let href = ''
+  if (type === 'email') {
+    href = `mailto:${description}`
+  } else if (type === 'phone') {
+    href = `tel:${description}`
+  } else if (type === 'address') {
+    href =
+      'https://maps.app.goo.gl/85ApnPmXXW49heSu7?g_st=com.google.maps.preview.copy'
+  }
+
   return (
     <div
       className={`h-[76px] lg:min-w-[255px] bg-${bgColor} flex flex-row items-center py-3 px-6 gap-4 rounded-xl`}
@@ -20,15 +31,28 @@ const InformationCard = ({
       >
         <img src={`/assets/icons/${icon}`} className='w-6 h-6' />
       </div>
+
       <div className='space-y-1'>
         <div className={`text-${titleColor} text-xs font-semibold`}>
           {title}
         </div>
-        <div
-          className={`text-${descriptionColor} font-medium text-xs max-w-[169px]`}
-        >
-          {description}
-        </div>
+
+        {type ? (
+          <a
+            href={href}
+            target={type === 'address' ? '_blank' : '_self'}
+            rel='noopener noreferrer'
+            className={`text-${descriptionColor} font-medium text-xs max-w-[169px] inline-block`}
+          >
+            {description}
+          </a>
+        ) : (
+          <div
+            className={`text-${descriptionColor} font-medium text-xs max-w-[169px]`}
+          >
+            {description}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -61,6 +85,7 @@ const ContactSection = () => {
             titleColor='white'
             description='0986663878'
             descriptionColor='black-900'
+            type='phone'
           />
           <InformationCard
             bgColor='#F0F0F0'
@@ -70,6 +95,7 @@ const ContactSection = () => {
             titleColor='primary-600'
             description='ngoanthachviet@gmail.com'
             descriptionColor='black-400'
+            type='email'
           />
           <InformationCard
             bgColor='primary-600'
@@ -88,6 +114,7 @@ const ContactSection = () => {
             titleColor='primary-600'
             description='167 Lý Thường Kiệt, Di Linh, Lâm Đồng'
             descriptionColor='black-400'
+            type='address'
           />
         </div>
 
