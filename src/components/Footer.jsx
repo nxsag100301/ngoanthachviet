@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-row gap-20 sm:gap-[125px] justify-center xl:justify-between text-white pt-4 max-w-[613px]'>
+            <div className='flex flex-row gap-20 sm:gap-[125px] justify-between xl:justify-between text-white pt-4 max-w-[613px]'>
               <div className='z-10'>
                 <div className='font-semibold text-base sm:text-lg mb-3 sm:mb-6 cursor-pointer'>
                   Dịch vụ
