@@ -7,7 +7,7 @@ const AboutSection = () => {
         src='/assets/images/cloud-bottom.png'
         className='absolute top-[0px] w-full h-[223px] object-cover'
       />
-      <div className='px-6 lg:px-20 pt-6 pb-16 bg-[#EBEAEA]'>
+      <div className='pt-6 pb-16 bg-[#EBEAEA] max-w-screen-2xl mx-auto'>
         <div className='w-full text-center relative select-none mb-16'>
           <div className='font-aquarelle text-[22px] sm:text-[32px] text-[#616161] font-normal lowercase'>
             Giới thiệu về
@@ -16,7 +16,7 @@ const AboutSection = () => {
             Chúng tôi
           </div>
         </div>
-        <div className='flex flex-col justify-center lg:flex-row relative max-w-screen-2xl mx-auto'>
+        <div className='flex flex-col justify-center lg:flex-row relative max-w-screen-2xl mx-auto px-6 lg:px-20'>
           <div className='w-full lg:w-1/2 h-full'>
             <div className='max-w-full text-center lg:text-start lg:max-w-[410px] mb-0 lg:mb-16 mx-auto lg:mx-0'>
               <div className='text-primary-600 font-penumbra font-bold text-xl sm:text-2xl uppercase mb-1'>
