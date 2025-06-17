@@ -12,7 +12,7 @@ const AboutSection = () => {
           <div className='font-aquarelle text-[22px] sm:text-[32px] text-[#616161] font-normal lowercase'>
             Giới thiệu về
           </div>
-          <div className='absolute left-1/2 -translate-x-1/2 top-6 sm:top-8 font-penumbra font-bold text-[24px] sm:text-[36px] text-[rgba(230,141,9,1)]'>
+          <div className='absolute w-full left-1/2 -translate-x-1/2 top-6 sm:top-8 font-penumbra font-bold text-[24px] sm:text-[36px] text-[rgba(230,141,9,1)]'>
             Chúng tôi
           </div>
         </div>
