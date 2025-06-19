@@ -70,11 +70,11 @@ const Navbar = () => {
           <div className='lg:hidden'>
             <Sheet>
               <SheetTrigger asChild>
-                <button>
+                <button className='focus:outline-none focus:ring-0'>
                   <IoMenu className='text-white w-8 h-8' />
                 </button>
               </SheetTrigger>
-              <SheetContent className='bg-primary-900 text-white'>
+              <SheetContent className='bg-primary-900 text-white focus:outline-none focus:ring-0'>
                 <nav className='flex flex-col gap-5 text-base pt-14'>
                   <SheetClose asChild>
                     <span onClick={() => navigate('/')}>Trang chủ</span>
