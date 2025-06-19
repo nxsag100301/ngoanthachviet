@@ -19,7 +19,9 @@ const DetailProduct = () => {
     'detail-prod.png',
     'about-stone.png',
     'about-stone2.png',
-    'representative.png'
+    'representative.png',
+    'rock-art.png',
+    'rock-art2.png'
   ]
   return (
     <div className='max-w-screen-2xl mx-auto bg-white px-6 lg:px-20 pt-9 pb-12'>
@@ -43,8 +45,8 @@ const DetailProduct = () => {
         <img src='/assets/icons/right-triangle.png' className='w-4 h-4' />
         <span className='text-gray-400 select-none'>Chi tiết</span>
       </div>
-      <div className='flex flex-col md:flex-row gap-[20px] sm:gap-[40px] xl:gap-[108px] '>
-        <div className='w-full md:w-1/2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-[20px] sm:gap-[40px] xl:gap-[108px] '>
+        <div className='w-full'>
           <ImageGallery listImage={listImage} />
           <div className='mt-4 sm:mt-6 h-[80px] sm:h-[104px] rounded-[12px] px-4 sm:px-9 py-4 shadow-lg flex flex-row justify-between items-center'>
             <div className='flex flex-col gap-1 sm:gap-2'>
@@ -63,7 +65,7 @@ const DetailProduct = () => {
             </Button>
           </div>
         </div>
-        <div className='w-full md:w-1/2'>
+        <div className='w-full'>
           <div className='flex flex-row justify-between items-center mb-3 sm:mb-4'>
             <span className='text-[#01021D] text-2xl font-semibold'>
               Đá cảnh thác chảy
@@ -72,7 +74,7 @@ const DetailProduct = () => {
               <img src='/assets/icons/bell.png' />
             </div>
           </div>
-          <div className='w-full sm:w-[60%] mb-4 sm:mb-6'>
+          <div className='w-full sm:w-[55%] md:w-full lg:w-[85%] xl:w-[75%] 2xl:w-[60%] mb-4 sm:mb-6'>
             <Status />
           </div>
           <div className='flex flex-row justify-between mb-6'>

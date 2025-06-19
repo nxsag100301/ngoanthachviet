@@ -1,8 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { IoIosSearch } from 'react-icons/io'
 import { Button } from './ui/button'
 import { useNavigate } from 'react-router-dom'
 import { IoMenu, IoClose } from 'react-icons/io5'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from './ui/dropdown-menu'
+import InputSearch from './InputSearch'
 
 const getCurrentTime = () => {
   const now = new Date()
@@ -22,6 +28,7 @@ const Navbar = () => {
   const [time, setTime] = useState(getCurrentTime())
   const [today] = useState(getFormattedDate())
   const [isOpenMenu, setIsOpenMenu] = useState(false)
+  const [isShowInputSearch, setIsShowInputSearch] = useState(false)
 
   const menuRef = useRef(null)
   const navigate = useNavigate()
@@ -86,79 +93,71 @@ const Navbar = () => {
           >
             Đấu giá
           </span>
-          <div className='flex flex-col gap-[2px]'>
-            <span className='text-sm sm:text-base'>{time}</span>
-            <span className='text-[10px] sm:text-xs leading-[18px] tracking-wide text-gray-300'>
-              {today}
-            </span>
-          </div>
+          {!isShowInputSearch && (
+            <div className='flex flex-col gap-[2px]'>
+              <span className='text-sm sm:text-base'>{time}</span>
+              <span className='text-[10px] sm:text-xs leading-[18px] tracking-wide text-gray-300'>
+                {today}
+              </span>
+            </div>
+          )}
           <div className='hidden sm:flex gap-[25px] items-center'>
-            <IoIosSearch className='w-[42px] h-[42px] p-2 cursor-pointer' />
             <Button className='w-[162px] h-[60px] text-base leading-7 tracking-wide'>
               Đăng nhập
             </Button>
           </div>
-          {isOpenMenu ? (
-            <IoClose
-              className='w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] cursor-pointer block lg:hidden'
-              onClick={() => setIsOpenMenu((prev) => !prev)}
-            />
-          ) : (
-            <IoMenu
-              className='w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] cursor-pointer block lg:hidden'
-              onClick={() => setIsOpenMenu((prev) => !prev)}
-            />
-          )}
+          {/* <InputSearch
+            isOpen={isShowInputSearch}
+            onChange={setIsShowInputSearch}
+          /> */}
+          <DropdownMenu onOpenChange={setIsOpenMenu}>
+            <DropdownMenuTrigger asChild>
+              {isOpenMenu ? (
+                <IoClose className='w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] cursor-pointer block lg:hidden' />
+              ) : (
+                <IoMenu className='w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] cursor-pointer block lg:hidden' />
+              )}
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              className='bg-primary-900 space-y-1 sm:space-y-2 md:space-y-3 text-white w-40 sm:w-52 md:w-60 mt-2 mr-2 border-primary-900 rounded-xl shadow-lg'
+              align='end'
+            >
+              <DropdownMenuItem
+                onClick={() => navigate('/')}
+                className='text-base sm:text-lg md:text-xl'
+              >
+                Trang chủ
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => navigate('/products')}
+                className='text-base sm:text-lg md:text-xl'
+              >
+                Sản phẩm
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => navigate('/news')}
+                className='text-base sm:text-lg md:text-xl'
+              >
+                Tin tức
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => navigate('/auction')}
+                className='text-base sm:text-lg md:text-xl'
+              >
+                Đấu giá
+              </DropdownMenuItem>
+              {/* <DropdownMenuItem
+                onClick={() => setIsShowInputSearch(true)}
+                className='block sm:hidden text-base sm:text-lg md:text-xl'
+              >
+                Tìm kiếm
+              </DropdownMenuItem> */}
+              <DropdownMenuItem className='block sm:hidden text-base sm:text-lg md:text-xl'>
+                Đăng nhập
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        {isOpenMenu && (
-          <div
-            ref={menuRef}
-            className='absolute w-[150px] text-white flex flex-col gap-3 bg-primary-900 right-2 top-14 py-2'
-          >
-            <div
-              onClick={() => {
-                navigate('/')
-                setIsOpenMenu(false)
-              }}
-              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
-            >
-              Trang chủ
-            </div>
-            <div
-              onClick={() => {
-                navigate('/products')
-                setIsOpenMenu(false)
-              }}
-              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
-            >
-              Sản phẩm
-            </div>
-            <div
-              onClick={() => {
-                navigate('/news')
-                setIsOpenMenu(false)
-              }}
-              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
-            >
-              Tin tức
-            </div>
-            <div
-              onClick={() => {
-                navigate('/auction')
-                setIsOpenMenu(false)
-              }}
-              className='cursor-pointer pl-3 text-base leading-7 tracking-wide'
-            >
-              Đấu giá
-            </div>
-            <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide block sm:hidden'>
-              Đăng nhập
-            </div>
-            <div className='cursor-pointer pl-3 text-base leading-7 tracking-wide block sm:hidden'>
-              Tìm kiếm
-            </div>
-          </div>
-        )}
       </div>
     </div>
   )

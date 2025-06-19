@@ -9,25 +9,22 @@ const tabConfigs = {
   contest: {
     bgImage: '/assets/images/contest-blur.png',
     imgSrc: '/assets/images/program.png',
-    activeIcon: '/assets/icons/trophy.png',
     label: 'Hội thi'
   },
   exhibiton: {
     bgImage: '/assets/images/exhibition-blur.png',
     imgSrc: '/assets/images/trienlam.png',
-    activeIcon: '/assets/icons/exhibiton-active.png',
     label: 'Triển lãm'
   },
   advise: {
     bgImage: '/assets/images/advise-blur.png',
     imgSrc: '/assets/images/tuvan.png',
-    activeIcon: '/assets/icons/advise-active.png',
     label: 'Tư vấn'
   }
 }
 
-const ProgramCard = ({ type, onChangeTab }) => {
-  const { bgImage, imgSrc, activeIcon, label } = tabConfigs[type]
+const ProgramCard = ({ type }) => {
+  const { bgImage, imgSrc } = tabConfigs[type]
 
   return (
     <div className='relative max-w-[1376px] mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px]'>
@@ -54,45 +51,6 @@ const ProgramCard = ({ type, onChangeTab }) => {
           absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2'
         />
       </div>
-
-      {/* Active button */}
-      <Button
-        onClick={() => onChangeTab(type)}
-        className='z-30 absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white text-primary-600 rounded-[32px] text-xs sm:text-sm xl:text-xl
-        bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 hover:bg-white cursor-auto'
-      >
-        <img src={activeIcon} className='w-3.5 h-3.5 xl:w-7 xl:h-7' />
-        {label}
-      </Button>
-
-      {/* Other tabs */}
-      {tabOrder
-        .filter((tab) => tab !== type)
-        .map((tab, index) => (
-          <Button
-            key={tab}
-            onClick={() => onChangeTab(tab)}
-            className={`absolute w-[90px] h-10 xl:w-[162px] xl:h-[60px] bg-white/70 text-gray-400 rounded-[32px] text-xs sm:text-sm xl:text-xl z-30
-        bottom-8 sm:bottom-24 md:bottom-32 xl:bottom-44 hover:bg-white/70 cursor-auto
-         ${
-           index === 0
-             ? 'left-3 sm:left-6 md:left-10 lg:left-20'
-             : 'right-3 sm:right-6 md:right-10 lg:right-20'
-         } flex items-center justify-center gap-2`}
-          >
-            <img
-              src={
-                tab === 'contest'
-                  ? '/assets/icons/trophy-non-active.png'
-                  : tab === 'exhibiton'
-                  ? '/assets/icons/gallery.png'
-                  : '/assets/icons/advise.png'
-              }
-              className='w-3.5 h-3.5 xl:w-7 xl:h-7'
-            />
-            {tabConfigs[tab].label}
-          </Button>
-        ))}
     </div>
   )
 }
@@ -107,7 +65,7 @@ const ProgramSection = () => {
         const nextIndex = (currentIndex + 1) % tabOrder.length
         return tabOrder[nextIndex]
       })
-    }, 2000)
+    }, 3000)
 
     return () => clearTimeout(timeout)
   }, [tab])

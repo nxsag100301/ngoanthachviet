@@ -75,7 +75,7 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-      <div className='max-w-screen-2xl mx-auto max-h-[713px] w-full py-12 px-6 lg:px-20'>
+      <div className='max-w-screen-2xl mx-auto min-h-[713px] w-full py-12 px-6 lg:px-20'>
         <div className='hidden xl:flex flex-row justify-between mb-9'>
           <InformationCard
             bgColor='primary-600'
@@ -118,11 +118,11 @@ const ContactSection = () => {
           />
         </div>
 
-        <div className='flex flex-row shadow-2xl max-h-[504px] rounded-[20px]'>
+        <div className='flex flex-col md:flex-row shadow-xl min-h-[504px] rounded-[20px]'>
           <img
-            src='/assets/images/map.png'
-            className='hidden md:inline-block object-cover md:w-1/2 md:max-w-[540px] 
-            rounded-tl-[20px] rounded-bl-[20px] xl:w-auto cursor-pointer'
+            src='/assets/images/map2.png'
+            className='object-cover object-center h-[300px] sm:h-[350px] md:h-auto md:w-1/2 md:max-w-[540px] rounded-tr-[20px]
+            rounded-tl-[20px] md:rounded-tr-none md:rounded-bl-[20px] xl:w-auto cursor-pointer'
             onClick={() =>
               window.open(
                 'https://maps.app.goo.gl/85ApnPmXXW49heSu7?g_st=com.google.maps.preview.copy',

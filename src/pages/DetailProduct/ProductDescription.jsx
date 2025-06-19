@@ -13,7 +13,7 @@ const ProductDescription = () => {
           tổng thể thì vên đá như một khung cảnh thu nhỏ của những ngọn núi cao
           thấp trùng điệp, có hồ, có suối và thung lũng.
         </div>
-        <div className='flex flex-row items-center gap-5 sm:gap-[44px]'>
+        <div className='flex flex-row items-center justify-center md:justify-start gap-5 sm:gap-[44px]'>
           <Button className='w-[150px] h-[50px] sm:w-[250px] sm:h-[60px] md:w-[170px] md:h-[50px] lg:w-[200px] xl:w-[250px] lg:h-[60px] px-6 py-4 text-white text-lg'>
             Mua ngay
           </Button>

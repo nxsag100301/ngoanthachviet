@@ -5,12 +5,12 @@ const RockArtSection = () => {
     <div className='bg-primary-700 relative h-[490px] sm:h-[550px] xl:h-[669px] bg-mountain2 bg-bottom bg-blend-overlay'>
       <div className='text-end relative select-none mb-16'>
         <div className='relative max-w-screen-2xl mx-auto px-6 lg:px-20'>
-          <div className='absolute right-[60px] lg:right-[117px] font-aquarelle text-[#FFFEFE] text-[22px] sm:text-[32px] font-normal lowercase block md:hidden xl:block'>
+          <div className='absolute right-[60px] lg:right-[117px] font-aquarelle text-[#FFFEFE] text-[28px] sm:text-[32px] font-normal lowercase block md:hidden xl:block'>
             Nghệ thuật
           </div>
           <div
             className='absolute right-6 lg:right-20 top-6 sm:top-8 font-penumbra font-bold 
-          text-[24px] sm:text-[36px] text-black block md:hidden xl:block'
+          text-[32px] sm:text-[36px] text-black block md:hidden xl:block'
           >
             Đá suiseki
           </div>
@@ -21,8 +21,8 @@ const RockArtSection = () => {
         >
           <img
             src='/assets/images/rock-art2.png'
-            className='absolute left-1/2 -translate-x-1/2 top-5 md:hidden w-[350px] h-[480px] 
-            sm:max-w-[400px] sm:h-[530px] object-contain'
+            className='absolute left-1/2 -translate-x-1/2 top-16 sm:top-6 md:hidden w-[290px] h-[420px] 
+            sm:w-[400px] sm:h-[530px] object-contain'
           />
           <div className='relative hidden md:block'>
             <img

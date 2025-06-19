@@ -6,6 +6,7 @@ import RepresentativeSection from './RepresentativeSection'
 import ProductSection from './ProductSection'
 import ProgramSection from './ProgramSection'
 import ContactSection from './ContactSection'
+import NewsSections from './NewsSections'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <RepresentativeSection />
       <ProductSection />
       <ProgramSection />
+      <NewsSections />
       <ContactSection />
     </div>
   )

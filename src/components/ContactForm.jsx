@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { toast } from 'react-toastify'
+import { Textarea } from './ui/textarea'
 
 const contactSchema = z.object({
   name: z
@@ -121,11 +122,12 @@ const ContactForm = () => {
 
       <div className='space-y-2 relative'>
         <Label htmlFor='question'>Câu hỏi</Label>
-        <Input
+        <Textarea
           id='question'
           placeholder='Chúng tôi có thể giúp gì cho bạn?'
+          rows={2}
           {...register('question')}
-          className={`placeholder:text-gray-400 ${
+          className={`resize-none placeholder:text-gray-400 ${
             errors.question &&
             'border-red-500 focus:ring-0 focus:outline-none focus:border-red-500'
           }`}

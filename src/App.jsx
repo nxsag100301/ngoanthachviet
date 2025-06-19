@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import AppRoutes from './routes/AppRoutes'
+import ButtonScrollToTop from './components/ButtonScrollToTop'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <AppRoutes />
         <Footer />
+        <ButtonScrollToTop />
         <ToastContainer autoClose={1000} hideProgressBar={true} />
       </Provider>
     </Router>

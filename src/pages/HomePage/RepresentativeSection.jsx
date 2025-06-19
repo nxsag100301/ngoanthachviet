@@ -16,7 +16,7 @@ const RepresentativeSection = () => {
           <div className='w-full lg:w-1/2 relative'>
             <img
               src='assets/images/representative.png'
-              className='mx-auto lg:w-auto object-contain'
+              className='mx-auto lg:w-auto object-cover w-full'
             />
             <img
               src='/assets/images/logo.png'
@@ -24,10 +24,10 @@ const RepresentativeSection = () => {
             />
           </div>
           <div className='w-full lg:w-1/2'>
-            <div className='uppercase text-start text-black font-bold text-lg xl:text-2xl mb-2 md:px-16 lg:px-0'>
+            <div className='uppercase text-black font-bold text-center lg:text-start text-lg xl:text-2xl mb-2 md:px-16 lg:px-0'>
               ĐÁ CÁCH TỰ NHIÊN Suiseki SK031
             </div>
-            <div className='text-sm xl:text-base text-gray-400 font-normal mb-2 text-justify md:px-16 lg:px-0'>
+            <div className='text-sm xl:text-base text-gray-400 font-normal mb-2 text-justify'>
               Là một khối đá tự nhiên 100%, từ dòng đá Canxit Sông Mã, Sơn La.
               Nó có hình dáng của một dãy núi hùng vĩ. Trên trên núi có cáo hố
               như những chiếc hồ trên núi. Dọc theo sườn núi, có các vân đá màu
@@ -35,16 +35,16 @@ const RepresentativeSection = () => {
               bên dưới. Nhìn tổng thể thì vên đá như một khung cảnh thu nhỏ của
               những ngọn núi cao thấp trùng điệp, có hồ, có suối và thung lũng…
             </div>
-            <div className='w-[300px] sm:w-[320px] lg:w-[358px] mb-4 xl:mb-9 md:px-16 lg:px-0'>
+            <div className=' sm:w-[320px] md:w-[358px] mb-4 xl:mb-9 mx-auto lg:mx-0'>
               <Status />
             </div>
-            <div className='flex flex-row justify-start gap-4 md:gap-8 md:px-16 lg:px-0'>
-              <Button className='w-[120px] h-[45px] md:w-[162px] md:h-[60px] text-white text-sm md:text-lg'>
+            <div className='flex flex-row justify-center lg:justify-start gap-4 md:gap-8'>
+              <Button className='h-[45px] w-[162px] md:h-[60px] text-white text-sm md:text-lg'>
                 Xem thông tin
               </Button>
               <Button
                 variant='outline'
-                className='w-[120px] h-[45px] md:w-[162px] md:h-[60px] text-sm md:text-lg'
+                className=' h-[45px] w-[162px] md:h-[60px] text-sm md:text-lg'
               >
                 Lịch sử
               </Button>

@@ -14,7 +14,7 @@ const Footer = () => {
                   src='/assets/images/logo.png'
                   className='w-[224px] sm:w-[264px] h-[108px] object-cover mx-auto'
                 />
-                <div className='mx-auto font-medium text-base sm:text-lg text-white text-justify'>
+                <div className='mx-auto font-medium text-base sm:text-lg text-white text-center'>
                   Nghệ thuật từ đá - Vẻ đẹp tự nhiên, tinh hoa đất trời
                 </div>
               </div>
@@ -30,48 +30,48 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-row gap-20 sm:gap-[125px] mx-auto lg:mx-0 justify-between text-white pt-4 max-w-[392px] sm:max-w-[441px] lg:max-w-[613px]'>
-              <div className='z-10'>
-                <div className='font-semibold text-base sm:text-lg mb-3 sm:mb-6 cursor-pointer'>
+            <div className='flex flex-row gap-20 lg:gap-[50px] xl:gap-[125px] mx-auto lg:mx-0 justify-between text-white pt-4 lg:max-w-[613px]'>
+              <div className='z-10 min-w-[100px] hidden lg:block '>
+                <div className='font-semibold text-lg mb-3 sm:mb-6 cursor-pointer'>
                   Dịch vụ
                 </div>
                 <div
                   onClick={() => navigate('/products')}
-                  className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer'
+                  className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2] cursor-pointer'
                 >
                   Sản phẩm
                 </div>
                 <div
                   onClick={() => navigate('/news')}
-                  className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer'
+                  className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2] cursor-pointer'
                 >
                   Tin tức
                 </div>
                 <div
                   onClick={() => navigate('/auction')}
-                  className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer'
+                  className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2] cursor-pointer'
                 >
                   Đấu giá
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] cursor-pointer'>
+                <div className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2] cursor-pointer'>
                   Theo dõi
                 </div>
               </div>
-              <div className='w-1/2 sm:max-w-[392px] tracking-[0.15px] leading-[34px] font-medium'>
-                <div className='font-semibold text-base sm:text-lg mb-3 sm:mb-6'>
+              <div className='w-full tracking-[0.15px] leading-[34px] font-medium mb-3'>
+                <div className='font-semibold text-lg mb-4 sm:mb-6 text-center lg:text-start'>
                   Liên hệ
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] '>
+                <div className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2]'>
                   <span className='text-black-200'>Số điện thoại:</span>{' '}
                   <a href='tel:0986663878'>0986663878</a>
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] break-words'>
+                <div className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2] break-words'>
                   <span className='text-black-200'>Email:</span>{' '}
                   <a href='mailto:ngoanthachviet@gmail.com'>
                     ngoanthachviet@gmail.com
                   </a>
                 </div>
-                <div className='mb-2 sm:mb-4 font-medium text-xs sm:text-sm text-[#D2D2D2] text-justify'>
+                <div className='mb-3 sm:mb-4 font-medium text-sm text-[#D2D2D2] text-justify'>
                   <span className='text-black-200'>Địa chỉ:</span>{' '}
                   <span
                     onClick={() =>
