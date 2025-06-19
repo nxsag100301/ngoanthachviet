@@ -10,7 +10,7 @@ const NewsSections = () => {
         <div className='uppercase font-penumbra font-bold text-2xl sm:text-4xl text-primary-600 mb-6 lg:mb-14 text-center lg:text-start'>
           Tin tức
         </div>
-        <div className='flex flex-col md:flex-row md:flex-wrap justify-center lg:grid lg:grid-cols-3 gap-6 xl:gap-[56px]'>
+        <div className='flex flex-col md:flex-row md:flex-wrap justify-center lg:grid lg:grid-cols-3 gap-6 xl:gap-[56px] mb-6'>
           {newsHomePage.length > 0 &&
             newsHomePage.map((news) => (
               <NewsCardForHomePage
