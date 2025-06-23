@@ -6,6 +6,7 @@ import NewsPage from '../pages/NewsPage/NewsPage'
 import AuctionPage from '../pages/AuctionPage/AuctionPage'
 import DetailProduct from '../pages/DetailProduct/DetailProduct'
 import PrivateRoute from './PrivateRoute'
+import DetailNews from '@/pages/DetailNews/DetailNews'
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
       <Route path='/auction' element={<AuctionPage />} />
       <Route path='/news' element={<NewsPage />} />
       <Route path='/products/:id' element={<DetailProduct />} />
+      <Route path='/news/:id' element={<DetailNews />} />
       <Route path='*' element={<NotFound />} />
       <Route element={<PrivateRoute />}>
         {/* Thêm private route vào đây */}

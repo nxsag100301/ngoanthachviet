@@ -65,3 +65,49 @@ body {
 .no-spinner {
   -moz-appearance: textfield;
 }
+
+.article-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.75;
+  color: #1a1a1a;
+  font-size: 18px;
+}
+
+.article-content h1,
+.article-content h2 {
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: #0f172a;
+}
+
+.article-content h1 {
+  font-size: 2em;
+}
+
+.article-content h2 {
+  font-size: 1.5em;
+}
+
+.article-content p {
+  margin-bottom: 1.2em;
+  text-align: justify;
+}
+
+.article-content span {
+  display: block;
+  text-align: justify;
+  margin-bottom: 1.2em;
+}
+
+.article-content img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

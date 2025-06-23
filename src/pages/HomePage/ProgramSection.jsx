@@ -1,54 +1,81 @@
-import React, { useLayoutEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
+import React, { useEffect, useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 
-const tabOrder = ['contest', 'exhibiton', 'advise']
-
-const tabConfigs = {
-  contest: {
-    bgImage: '/assets/images/contest-blur.png',
-    imgSrc: '/assets/images/program.png',
-    label: 'Hội thi'
+const images = [
+  {
+    bgImage: '/assets/images/program/1.jpg',
+    imgSrc: '/assets/images/program/1.jpg'
   },
-  exhibiton: {
-    bgImage: '/assets/images/exhibition-blur.png',
-    imgSrc: '/assets/images/trienlam.png',
-    label: 'Triển lãm'
+  {
+    bgImage: '/assets/images/program/2.jpg',
+    imgSrc: '/assets/images/program/2.jpg'
   },
-  advise: {
-    bgImage: '/assets/images/advise-blur.png',
-    imgSrc: '/assets/images/tuvan.png',
-    label: 'Tư vấn'
+  {
+    bgImage: '/assets/images/program/3.jpg',
+    imgSrc: '/assets/images/program/3.jpg'
+  },
+  {
+    bgImage: '/assets/images/program/4.jpg',
+    imgSrc: '/assets/images/program/4.jpg'
+  },
+  {
+    bgImage: '/assets/images/program/5.jpg',
+    imgSrc: '/assets/images/program/5.jpg'
+  },
+  {
+    bgImage: '/assets/images/program/6.jpg',
+    imgSrc: '/assets/images/program/6.jpg'
+  },
+  {
+    bgImage: '/assets/images/program/7.jpg',
+    imgSrc: '/assets/images/program/7.jpg'
+  },
+  {
+    bgImage: '/assets/images/program/8.jpg',
+    imgSrc: '/assets/images/program/8.jpg'
   }
-}
+]
 
-const ProgramCard = ({ type }) => {
-  const { bgImage, imgSrc } = tabConfigs[type]
+const ProgramCard = ({ bgImage, imgSrc, onLoad }) => {
+  const [loaded, setLoaded] = useState(false)
+
+  const handleImageLoad = () => {
+    setLoaded(true)
+    onLoad?.()
+  }
 
   return (
     <div className='relative max-w-[1376px] mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px] rounded-3xl'>
+      {/* Nền blur */}
       <div
-        className='absolute bg-no-repeat bg-cover inset-0 z-0 w-full h-full rounded-[40px] overflow-hidden'
+        className='absolute bg-no-repeat bg-cover inset-0 z-0 w-full h-full rounded-[40px] overflow-hidden transition-opacity duration-500'
         style={{
-          ['--bg']: `url('${bgImage}')`,
-          backgroundImage: 'var(--bg)',
-          filter: 'blur(8px)'
+          backgroundImage: `url('${bgImage}')`,
+          filter: 'blur(8px)',
+          opacity: loaded ? 1 : 0
         }}
       ></div>
 
       {/* Logo */}
-      <img
-        src='/assets/images/logo.png'
-        className='absolute object-contain h-[65px] sm:h-[85px] md:h-[100px] xl:h-[130px] left-1/2 -translate-x-1/2 top-0 xl:top-2'
-      />
+      {loaded && (
+        <img
+          src='/assets/images/logo.png'
+          className='absolute object-contain h-[65px] sm:h-[85px] md:h-[100px] xl:h-[130px] left-1/2 -translate-x-1/2 top-0 xl:top-2
+    transition-opacity duration-500 opacity-100'
+        />
+      )}
 
-      {/* Main Image */}
+      {/* Main image */}
       <div className='z-20 relative h-full mx-6 lg:mx-20'>
         <img
           src={imgSrc}
-          className='object-cover h-[200px] sm:h-[240px] md:h-[370px] xl:h-[434px] rounded-3xl 
-          absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2'
+          onLoad={handleImageLoad}
+          className={`object-cover h-[200px] sm:h-[240px] md:h-[370px] xl:h-[434px] rounded-3xl 
+            absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2
+            transition-opacity duration-500 ${
+              loaded ? 'opacity-100' : 'opacity-0'
+            }`}
         />
       </div>
     </div>
@@ -56,19 +83,19 @@ const ProgramCard = ({ type }) => {
 }
 
 const ProgramSection = () => {
-  const [tab, setTab] = useState('contest')
+  const [index, setIndex] = useState(0)
+  const [canSwitch, setCanSwitch] = useState(false)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    if (!canSwitch) return
+
     const timeout = setTimeout(() => {
-      setTab((prev) => {
-        const currentIndex = tabOrder.indexOf(prev)
-        const nextIndex = (currentIndex + 1) % tabOrder.length
-        return tabOrder[nextIndex]
-      })
+      setCanSwitch(false)
+      setIndex((prev) => (prev + 1) % images.length)
     }, 3000)
 
     return () => clearTimeout(timeout)
-  }, [tab])
+  }, [index, canSwitch])
 
   return (
     <div className='bg-[#FDFDFD] relative pt-4 pb-16 px-6 lg:px-20'>
@@ -82,13 +109,13 @@ const ProgramSection = () => {
       </div>
       <AnimatePresence mode='wait'>
         <motion.div
-          key={tab}
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 0 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
         >
-          <ProgramCard type={tab} onChangeTab={setTab} />
+          <ProgramCard {...images[index]} onLoad={() => setCanSwitch(true)} />
         </motion.div>
       </AnimatePresence>
     </div>

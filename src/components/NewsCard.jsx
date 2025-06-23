@@ -1,9 +1,14 @@
 import React from 'react'
 import { Button } from './ui/button'
+import { useNavigate } from 'react-router-dom'
 
 const NewsCard = ({ image, title, date, id }) => {
+  const navigate = useNavigate()
   return (
-    <div className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6'>
+    <div
+      className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6'
+      onClick={() => navigate(`/news/${id}`)}
+    >
       <img
         src={image}
         className='h-[253px] w-full rounded-t-[12px] object-cover mb-6 sm:mb-9'
