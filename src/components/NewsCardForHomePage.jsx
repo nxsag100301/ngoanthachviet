@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 
 const NewsCardForHomePage = ({ image, title, date, id }) => {
   return (
-    <div className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6 md:max-w-[48%] lg:max-w-full'>
+    <div className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6 md:max-w-[48%] lg:max-w-full flex flex-col h-full'>
       <img
         src={image}
         className='h-[253px] w-full rounded-t-[12px] object-cover mb-6 sm:mb-9'
@@ -14,12 +14,11 @@ const NewsCardForHomePage = ({ image, title, date, id }) => {
         </div>
         <div className='mb-1 sm:mb-3 text-[#626276]'>{date}</div>
       </div>
-      <Button
-        variant='outline'
-        className='mx-4 sm:mx-6 float-right w-[162px] h-[50px]'
-      >
-        Chi tiết
-      </Button>
+      <div className='mt-auto px-4 sm:px-6 flex justify-end'>
+        <Button variant='outline' className='w-[162px] h-[50px]'>
+          Chi tiết
+        </Button>
+      </div>
     </div>
   )
 }

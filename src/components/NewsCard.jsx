@@ -14,12 +14,11 @@ const NewsCard = ({ image, title, date, id }) => {
         </div>
         <div className='mb-1 sm:mb-3 text-[#626276]'>{date}</div>
       </div>
-      <Button
-        variant='outline'
-        className='mx-4 sm:mx-6 float-right w-[162px] h-[50px]'
-      >
-        Chi tiết
-      </Button>
+      <div className='mt-auto px-4 sm:px-6 flex justify-end'>
+        <Button variant='outline' className='w-[162px] h-[50px]'>
+          Chi tiết
+        </Button>
+      </div>
     </div>
   )
 }

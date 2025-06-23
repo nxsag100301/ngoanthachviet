@@ -25,7 +25,7 @@ const NewsPage = () => {
           newsPage.map((news) => (
             <NewsCard
               key={news.id}
-              image={`https://brandname.phuckhangnet.vn/ftp_images/${news.avatar}`}
+              image={news.avatar}
               title={news.title}
               date={news.createdate.split(' ')[0]}
               id={news.id}
