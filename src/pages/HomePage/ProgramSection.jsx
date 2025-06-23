@@ -27,7 +27,7 @@ const ProgramCard = ({ type }) => {
   const { bgImage, imgSrc } = tabConfigs[type]
 
   return (
-    <div className='relative max-w-[1376px] mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px]'>
+    <div className='relative max-w-[1376px] mx-auto h-[300px] sm:h-[400px] md:h-[550px] xl:h-[710px] rounded-3xl'>
       <div
         className='absolute bg-no-repeat bg-cover inset-0 z-0 w-full h-full rounded-[40px] overflow-hidden'
         style={{
