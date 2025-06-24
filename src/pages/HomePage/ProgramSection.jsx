@@ -52,7 +52,7 @@ const ProgramCard = ({ bgImage, imgSrc, onLoad }) => {
         className='absolute bg-no-repeat bg-center bg-[#fdfdfd] border-[#fdfdfd] inset-0 z-0 w-full h-full rounded-[80px] md:rounded-[120px] overflow-hidden transition-opacity duration-500'
         style={{
           backgroundImage: `url('${bgImage}')`,
-          filter: 'blur(4px)',
+          filter: 'blur(6px)',
           opacity: loaded ? 1 : 0,
           backgroundSize: '91% 90%'
         }}
