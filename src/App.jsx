@@ -4,10 +4,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import { Provider } from 'react-redux'
-import { store } from './redux/store'
 import AppRoutes from './routes/AppRoutes'
 import ButtonScrollToTop from './components/ButtonScrollToTop'
 import { persistStore } from 'redux-persist'
+import store from './redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const persistor = persistStore(store)
 
