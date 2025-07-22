@@ -3,8 +3,7 @@ import { useRef, useState, useEffect } from 'react'
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5'
 
 const ImageGallery = ({ listImage }) => {
-  const [selectedImg, setSelectedImg] = useState(listImage[0])
-  const [imageToSelect, setImageToSelect] = useState(listImage.slice(1))
+  const [mainImage, setMainImage] = useState(listImage[0])
   const scrollAreaRef = useRef(null)
   const [viewportEl, setViewportEl] = useState(null)
   const [showLeft, setShowLeft] = useState(false)
@@ -36,15 +35,10 @@ const ImageGallery = ({ listImage }) => {
         window.removeEventListener('resize', checkScroll)
       }
     }
-  }, [imageToSelect])
+  }, [])
 
-  const handleSelectImage = (current, next) => {
-    setImageToSelect((prev) => {
-      const updated = prev.filter((img) => img !== next)
-      updated.unshift(current)
-      return updated
-    })
-    setSelectedImg(next)
+  const handleSelectImage = (image) => {
+    setMainImage(image)
   }
 
   const scroll = (direction) => {
@@ -60,7 +54,7 @@ const ImageGallery = ({ listImage }) => {
     <div>
       {/* Ảnh lớn */}
       <img
-        src={`/assets/images/${selectedImg}`}
+        src={`/assets/images/${mainImage}`}
         className='rounded-[12px] mb-3 sm:mb-6 h-[300px] sm:h-[483px] w-full md:h-[320px] lg:h-[420px] xl:h-[483px] object-cover mx-auto'
       />
 
@@ -79,11 +73,11 @@ const ImageGallery = ({ listImage }) => {
         {/* Scroll Area */}
         <ScrollArea ref={scrollAreaRef} className='w-full overflow-hidden'>
           <div className='flex gap-3 sm:gap-6 pb-2 w-fit'>
-            {imageToSelect.map((img, index) => (
+            {listImage.map((img, index) => (
               <img
                 key={index}
                 src={`/assets/images/${img}`}
-                onClick={() => handleSelectImage(selectedImg, img)}
+                onClick={() => handleSelectImage(img)}
                 className='rounded-[12px] cursor-pointer object-cover h-[105px] w-[120px] sm:w-[182px] md:w-[120px] lg:w-1/3 xl:w-[30.7%] sm:h-[193px] md:h-[120px] xl:h-[173px] border flex-shrink-0'
               />
             ))}
