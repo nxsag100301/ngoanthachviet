@@ -7,17 +7,22 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import AppRoutes from './routes/AppRoutes'
 import ButtonScrollToTop from './components/ButtonScrollToTop'
+import { persistStore } from 'redux-persist'
+
+const persistor = persistStore(store)
 
 function App() {
   return (
     <Router>
       <Provider store={store}>
-        <ScrollToTop />
-        <Navbar />
-        <AppRoutes />
-        <Footer />
-        <ButtonScrollToTop />
-        <ToastContainer autoClose={1000} hideProgressBar={true} />
+        <PersistGate persistor={persistor}>
+          <ScrollToTop />
+          <Navbar />
+          <AppRoutes />
+          <Footer />
+          <ButtonScrollToTop />
+          <ToastContainer autoClose={1000} hideProgressBar={true} />
+        </PersistGate>
       </Provider>
     </Router>
   )
