@@ -1,17 +1,3 @@
-export const capitalizeFirstLetter = (val) => {
-  if (!val) return ''
-  return `${val.charAt(0).toUpperCase()}${val.slice(1)}`
-}
-
-export const generatePlaceholderCard = (column) => {
-  return {
-    _id: `${column._id}-placeholder-card`,
-    boardId: column.boardId,
-    columnId: column._id,
-    FE_PlaceholderCard: true
-  }
-}
-
 export const interceptorLoadingElements = (calling) => {
   // DOM lấy ra toàn bộ phần tử trên page hiện tại có className là 'interceptor-loading'
   const elements = document.querySelectorAll('.interceptor-loading')

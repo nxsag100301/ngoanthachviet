@@ -1,10 +1,37 @@
 import NewsCard from '@/components/NewsCard'
 import { newsPage } from '@/mockData/news'
-import React from 'react'
+import { fetchNews } from '@/redux/actions/newActions'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const NewsPage = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const fetchListNews = () => {
+      dispatch(
+        fetchNews({
+          body: {
+            lang: 'vn',
+            loai: 6,
+            menuid: '71',
+            soitem: '3',
+            sotrang: '1'
+          },
+          onSuccess: (data) => {
+            console.log('res:', data)
+          },
+          onError: (err) => {
+            console.log('err:', err)
+          }
+        })
+      )
+    }
+    fetchListNews()
+  }, [dispatch])
+
   return (
     <div className='max-w-screen-2xl mx-auto px-6 lg:px-20 pt-9 pb-12'>
       <div className='uppercase font-penumbra font-bold text-2xl sm:text-4xl text-primary-600 mb-6'>

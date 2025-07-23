@@ -4,11 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import AnotherProducts from '@/components/AnotherProducts'
 import AuctionDialog from '@/components/AuctionDialog'
 import Status from '@/components/Status'
-import AuctionInfomation from './AuctionInformation'
-import ImageGallery from './ImageGallery'
-import AuctionStartOrEnd from './AuctionStartOrEnd'
-import ProductDescription from './ProductDescription'
-import AuctionLive from './AuctionLive'
+import AuctionInfomation from './components/AuctionInformation'
+import ImageGallery from './components/ImageGallery'
+import AuctionStartOrEnd from './components/AuctionStartOrEnd'
+import ProductDescription from './components/ProductDescription'
+import AuctionLive from './components/AuctionLive'
 
 const DetailProduct = () => {
   // eslint-disable-next-line no-unused-vars

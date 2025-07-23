@@ -4,6 +4,10 @@ import storage from 'redux-persist/lib/storage'
 import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
 import { injectStore } from '@/utils/authorizeAxios'
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from '@/saga/rootSaga'
+
+const sagaMiddleware = createSagaMiddleware()
 
 const reducers = combineReducers({
   user: userReducer
@@ -21,10 +25,13 @@ const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false
-    }),
+      serializableCheck: false,
+      thunk: false
+    }).concat(sagaMiddleware),
   devTools: true
 })
+
+sagaMiddleware.run(rootSaga)
 
 injectStore(store)
 

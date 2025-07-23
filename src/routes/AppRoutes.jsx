@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from '../pages/HomePage/Home'
-import NotFound from '../pages/NotFound'
-import ProductPage from '../pages/ProductPage/ProductPage'
-import NewsPage from '../pages/NewsPage/NewsPage'
-import AuctionPage from '../pages/AuctionPage/AuctionPage'
-import DetailProduct from '../pages/DetailProduct/DetailProduct'
+import Home from '@/pages/HomePage'
+import NotFound from '@/pages/NotFound'
+import ProductPage from '@/pages/ProductPage'
+import NewsPage from '@/pages/NewsPage'
+import AuctionPage from '@/pages/AuctionPage'
+import DetailProduct from '@/pages/DetailProduct'
 import PrivateRoute from './PrivateRoute'
-import DetailNews from '@/pages/DetailNews/DetailNews'
+import DetailNews from '@/pages/DetailNews'
 
 const AppRoutes = () => {
   return (
