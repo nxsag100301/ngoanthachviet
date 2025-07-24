@@ -13,7 +13,7 @@ let authorizeAxiosInstance = axios.create({
 })
 
 authorizeAxiosInstance.defaults.timeout = 1000 * 60 * 10
-authorizeAxiosInstance.defaults.withCredentials = true
+// authorizeAxiosInstance.defaults.withCredentials = true
 
 // Interceptors Request
 authorizeAxiosInstance.interceptors.request.use(

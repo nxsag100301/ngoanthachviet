@@ -1,3 +1,4 @@
+import LoadingScreen from '@/components/LoadingScreen'
 import NewsCard from '@/components/NewsCard'
 import { fetchNews } from '@/redux/actions/newActions'
 import { useEffect, useState } from 'react'
@@ -8,31 +9,39 @@ const NewsPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const [loading, setLoading] = useState(false)
   const [listNews, setListNews] = useState([])
 
   useEffect(() => {
     const fetchListNews = () => {
+      setLoading(true)
       dispatch(
         fetchNews({
           body: {
             lang: 'vn',
             loai: 6,
             menuid: '1',
-            soitem: '3',
+            soitem: '9',
             sotrang: '1'
           },
           onSuccess: (data) => {
             console.log('res:', data)
             setListNews(data.responses)
+            setLoading(false)
           },
           onError: (err) => {
             console.log('err:', err)
+            setLoading(false)
           }
         })
       )
     }
     fetchListNews()
   }, [dispatch])
+
+  if (loading) {
+    return <LoadingScreen />
+  }
 
   return (
     <div className='max-w-screen-2xl mx-auto px-6 lg:px-20 pt-9 pb-12'>

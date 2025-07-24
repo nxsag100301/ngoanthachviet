@@ -1,4 +1,4 @@
-import { detailNews } from '@/mockData/news'
+import LoadingScreen from '@/components/LoadingScreen'
 import { fetchNews } from '@/redux/actions/newActions'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -9,11 +9,11 @@ const DetailNews = () => {
   const dispatch = useDispatch()
 
   const [contentNews, setContentNews] = useState(null)
-
-  const content = detailNews.find((item) => item.id == id)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchDetailtNews = () => {
+      setLoading(true)
       dispatch(
         fetchNews({
           body: {
@@ -22,11 +22,12 @@ const DetailNews = () => {
             postid: id
           },
           onSuccess: (data) => {
-            console.log('res:', data)
             setContentNews(data.responses[0])
+            setLoading(false)
           },
           onError: (err) => {
             console.log('err:', err)
+            setLoading(false)
           }
         })
       )
@@ -34,12 +35,15 @@ const DetailNews = () => {
     fetchDetailtNews()
   }, [dispatch, id])
 
+  if (loading) {
+    return <LoadingScreen />
+  }
+
   return (
-    <div>
-      <h1 className='article-content'>{contentNews?.title}</h1>
-      <h2 className='article-content'>{contentNews?.summary}</h2>
+    <div className='article-content'>
+      <h1>{contentNews?.title}</h1>
+      <h2>{contentNews?.summary}</h2>
       <div
-        className='article-content'
         dangerouslySetInnerHTML={{
           __html:
             contentNews?.articlecontent || '<p>Không tìm thấy nội dung</p>'
