@@ -1,9 +1,7 @@
-import NewsCard from '@/components/NewsCard'
-import NewsCardForHomePage from '@/components/NewsCardForHomePage'
-import { newsHomePage } from '@/mockData/news'
 import { fetchNews } from '@/redux/actions/newActions'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import NewsCardForHomePage from './NewsCardForHomePage'
 
 const NewsSections = () => {
   const dispatch = useDispatch()

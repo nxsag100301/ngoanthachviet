@@ -1,5 +1,5 @@
+import { Button } from '@/components/ui/button'
 import React from 'react'
-import { Button } from './ui/button'
 import { useNavigate } from 'react-router-dom'
 
 const NewsCardForHomePage = ({ image, title, date, id }) => {
