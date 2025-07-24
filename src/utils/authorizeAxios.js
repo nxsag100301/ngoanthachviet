@@ -9,7 +9,7 @@ export const injectStore = (mainStore) => {
 }
 
 let authorizeAxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_ROOT
+  baseURL: import.meta.env.VITE_API_NEWS
 })
 
 authorizeAxiosInstance.defaults.timeout = 1000 * 60 * 10

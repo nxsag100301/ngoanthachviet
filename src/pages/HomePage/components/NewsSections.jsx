@@ -1,9 +1,38 @@
 import NewsCard from '@/components/NewsCard'
 import NewsCardForHomePage from '@/components/NewsCardForHomePage'
 import { newsHomePage } from '@/mockData/news'
-import React from 'react'
+import { fetchNews } from '@/redux/actions/newActions'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 const NewsSections = () => {
+  const dispatch = useDispatch()
+
+  const [listNews, setListNews] = useState([])
+
+  useEffect(() => {
+    const fetchListNews = () => {
+      dispatch(
+        fetchNews({
+          body: {
+            lang: 'vn',
+            loai: 6,
+            menuid: '1',
+            soitem: '3',
+            sotrang: '1'
+          },
+          onSuccess: (data) => {
+            console.log('res:', data)
+            setListNews(data.responses)
+          },
+          onError: (err) => {
+            console.log('err:', err)
+          }
+        })
+      )
+    }
+    fetchListNews()
+  }, [dispatch])
   return (
     <div className='bg-[#FDFDFD]'>
       <div className='max-w-screen-2xl mx-auto py-3 lg:py-12 px-6 lg:px-20'>
@@ -11,11 +40,13 @@ const NewsSections = () => {
           Tin tức
         </div>
         <div className='flex flex-col md:flex-row md:flex-wrap justify-center lg:grid lg:grid-cols-3 gap-6 xl:gap-[56px] mb-6'>
-          {newsHomePage.length > 0 &&
-            newsHomePage.map((news) => (
+          {listNews.length > 0 &&
+            listNews.map((news) => (
               <NewsCardForHomePage
                 key={news.id}
-                image={news.avatar}
+                image={
+                  'https://dacanhnghethuat.com/wp-content/uploads/Suiseki7B189-600x600.jpg'
+                }
                 title={news.title}
                 date={news.createdate.split(' ')[0]}
                 id={news.id}

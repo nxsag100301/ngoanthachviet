@@ -1,13 +1,14 @@
 import NewsCard from '@/components/NewsCard'
-import { newsPage } from '@/mockData/news'
 import { fetchNews } from '@/redux/actions/newActions'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const NewsPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  const [listNews, setListNews] = useState([])
 
   useEffect(() => {
     const fetchListNews = () => {
@@ -16,12 +17,13 @@ const NewsPage = () => {
           body: {
             lang: 'vn',
             loai: 6,
-            menuid: '71',
+            menuid: '1',
             soitem: '3',
             sotrang: '1'
           },
           onSuccess: (data) => {
             console.log('res:', data)
+            setListNews(data.responses)
           },
           onError: (err) => {
             console.log('err:', err)
@@ -48,11 +50,13 @@ const NewsPage = () => {
         <span className='text-gray-400 select-none'>Tin tức</span>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6'>
-        {newsPage.length > 0 &&
-          newsPage.map((news) => (
+        {listNews.length > 0 &&
+          listNews.map((news) => (
             <NewsCard
               key={news.id}
-              image={news.avatar}
+              image={
+                'https://dacanhnghethuat.com/wp-content/uploads/Suiseki7B189-600x600.jpg'
+              }
               title={news.title}
               date={news.createdate.split(' ')[0]}
               id={news.id}

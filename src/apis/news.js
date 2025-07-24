@@ -15,6 +15,6 @@ import axios from '@/utils/authorizeAxios'
 // }
 
 export const getNews = async (data) => {
-  const res = await axios.post('/api/store/StoredProcedure', data)
+  const res = await axios.post('/store/StoredProcedure', data)
   return res.data
 }
