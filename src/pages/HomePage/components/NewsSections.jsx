@@ -20,7 +20,6 @@ const NewsSections = () => {
             sotrang: '1'
           },
           onSuccess: (data) => {
-            console.log('res:', data)
             setListNews(data.responses)
           },
           onError: (err) => {
@@ -42,9 +41,7 @@ const NewsSections = () => {
             listNews.map((news) => (
               <NewsCardForHomePage
                 key={news.id}
-                image={
-                  'https://dacanhnghethuat.com/wp-content/uploads/Suiseki7B189-600x600.jpg'
-                }
+                image={`https://ngoanthachviet.com/ftp_images/${news.avatar}`}
                 title={news.title}
                 date={news.createdate.split(' ')[0]}
                 id={news.id}
