@@ -45,7 +45,7 @@ const NewsPage = () => {
 
   return (
     <div className='max-w-screen-2xl mx-auto px-6 lg:px-20 pt-9 pb-12'>
-      <div className='uppercase font-penumbra font-bold text-2xl sm:text-4xl text-primary-600 mb-6'>
+      <div className='uppercase font-penumbra font-bold text-xl sm:text-2xl md:text-3xl xl:text-4xl text-primary-600 mb-6'>
         Tin tức
       </div>
       <div className='flex flex-row gap-2 items-center text-lg mb-6'>
