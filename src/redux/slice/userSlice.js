@@ -9,7 +9,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      state.userInfo === null
+      state.userInfo = null
     }
   }
 })
