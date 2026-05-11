@@ -1,13 +1,20 @@
-import { Button } from '@/components/ui/button'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const NewsCardForHomePage = ({ image, title, date, id }) => {
+import { Button } from '@/components/ui/button'
+
+const NewsCardForHomePage = ({ image, title, date, data }) => {
   const navigate = useNavigate()
   return (
     <div
       className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6 md:max-w-[48%] lg:max-w-full flex flex-col h-full'
-      onClick={() => navigate(`/news/${id}`)}
+      onClick={() =>
+        navigate(`/news/${data?.Id ?? 'detail'}`, {
+          state: {
+            data
+          }
+        })
+      }
     >
       <img
         src={image}

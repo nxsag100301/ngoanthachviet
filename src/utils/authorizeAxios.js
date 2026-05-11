@@ -9,7 +9,11 @@ export const injectStore = (mainStore) => {
 }
 
 let authorizeAxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_NEWS
+  baseURL: import.meta.env.VITE_API_NEWS,
+  headers: {
+    'x-api-key': 'pkn',
+    userIdLogin: 0
+  }
 })
 
 authorizeAxiosInstance.defaults.timeout = 1000 * 60 * 10

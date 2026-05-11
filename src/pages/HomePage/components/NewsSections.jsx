@@ -1,6 +1,8 @@
-import { fetchNews } from '@/redux/actions/newActions'
-import React, { useEffect, useState } from 'react'
+import moment from 'moment'
 import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+
+import { fetchNews } from '@/redux/actions/newActions'
 import NewsCardForHomePage from './NewsCardForHomePage'
 
 const NewsSections = () => {
@@ -13,14 +15,13 @@ const NewsSections = () => {
       dispatch(
         fetchNews({
           body: {
-            lang: 'vn',
-            loai: 6,
-            menuid: '1',
-            soitem: '3',
-            sotrang: '1'
+            SearchText: '',
+            PageNumber: 1,
+            PageSize: 3,
+            Status: 'Published'
           },
           onSuccess: (data) => {
-            setListNews(data.responses)
+            setListNews(data?.metadata?.Items)
           },
           onError: (err) => {
             console.log('err:', err)
@@ -30,6 +31,7 @@ const NewsSections = () => {
     }
     fetchListNews()
   }, [dispatch])
+
   return (
     <div className='bg-[#FDFDFD]'>
       <div className='max-w-screen-2xl mx-auto py-3 lg:py-12 px-6 lg:px-20'>
@@ -37,14 +39,14 @@ const NewsSections = () => {
           Tin tức
         </div>
         <div className='flex flex-col md:flex-row md:flex-wrap justify-center lg:grid lg:grid-cols-3 gap-6 xl:gap-[56px] mb-6'>
-          {listNews.length > 0 &&
+          {listNews?.length > 0 &&
             listNews.map((news) => (
               <NewsCardForHomePage
-                key={news.id}
-                image={`https://ngoanthachviet.com/ftp_images/${news.avatar}`}
-                title={news.title}
-                date={news.createdate.split(' ')[0]}
-                id={news.id}
+                key={news.Id}
+                image={`${import.meta.env.VITE_URL_IMAGE}${news.ImageUrl}`}
+                title={news.Title}
+                date={moment(news.CreatedAt).format('DD/MM/YYYY')}
+                data={news}
               />
             ))}
         </div>

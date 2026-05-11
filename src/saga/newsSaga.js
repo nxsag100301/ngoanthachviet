@@ -1,10 +1,10 @@
 import { call, takeLatest } from 'redux-saga/effects'
-import { getNews } from '@/apis/news'
+import { getIntroduction } from '@/apis/news'
 import { FETCH_NEWS } from '@/redux/actions/newActions'
 
 function* handleFetchNews(action) {
   try {
-    const data = yield call(getNews, action.payload.body)
+    const data = yield call(getIntroduction, action.payload.body)
     if (action.payload.onSuccess) {
       action.payload.onSuccess(data)
     }
