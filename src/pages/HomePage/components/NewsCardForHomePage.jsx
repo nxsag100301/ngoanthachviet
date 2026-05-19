@@ -8,13 +8,7 @@ const NewsCardForHomePage = ({ image, title, date, data }) => {
   return (
     <div
       className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6 md:max-w-[48%] lg:max-w-full flex flex-col h-full'
-      onClick={() =>
-        navigate(`/news/${data?.Id ?? 'detail'}`, {
-          state: {
-            data
-          }
-        })
-      }
+      onClick={() => navigate(`/news/${data?.Id}`)}
     >
       <img
         src={image}

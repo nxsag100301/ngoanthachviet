@@ -1,10 +1,34 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+
+import { getDetailIntroduction } from '@/apis/news'
+import LoadingScreen from '@/components/LoadingScreen'
 
 const DetailNews = () => {
-  const location = useLocation()
+  const { id } = useParams()
 
-  const news = location?.state?.data
+  const [news, setNews] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        setLoading(true)
+        const res = await getDetailIntroduction({ ArticleID: id })
+        if (res?.statusCodes === 200 && res?.metadata) {
+          setNews(res?.metadata)
+        }
+      } catch (error) {
+        console.log('Error fetch detail news: ', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchNews()
+  }, [id])
+
+  if (loading) return <LoadingScreen />
 
   return (
     <div className='article-content'>

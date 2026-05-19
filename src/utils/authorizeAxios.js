@@ -12,7 +12,8 @@ let authorizeAxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_NEWS,
   headers: {
     'x-api-key': 'pkn',
-    userIdLogin: 0
+    userIdLogin: 0,
+    langCode: 'vi-VN'
   }
 })
 

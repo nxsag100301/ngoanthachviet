@@ -9,13 +9,7 @@ const NewsCard = ({ image, title, date, data }) => {
   return (
     <div
       className='shadow-lg rounded-[12px] cursor-pointer pb-4 sm:pb-6'
-      onClick={() =>
-        navigate(`/news/${data?.Id ?? 'detail'}`, {
-          state: {
-            data
-          }
-        })
-      }
+      onClick={() => navigate(`/news/${data?.Id}`)}
     >
       <img
         src={image}
